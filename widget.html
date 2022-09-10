@@ -766,7 +766,7 @@
                         
                         <button class="btn btn-primary disabled" type="button" style="background-color: black;"
                             onclick="createHPI_copypaste()" id="hpiBut">Copy Paste HPI</button>
-                        <a href = "#"class="btn btn-primary disabled" aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()" id="pdfBut">Generated PDF referral link.<br>Right-click and open in new tab</a>
+                        <a target ="_blank" href = "#"class="btn btn-primary disabled" aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()" id="pdfBut">Generated PDF referral link.<br>Right-click and open in new tab</a>
                             
 
   
@@ -1094,13 +1094,13 @@
             var badOutCon = true
             // need to remove "has"
             var badOutConPosit = userInput[13]!=''? userInput[13].substring(8).replaceAll('has ', '').replaceAll('is pregnant, ', '').replaceAll('is pregnant and ', '').replaceAll('.', '').trim() : badOutCon=false
-            badOutCon = badOutConPosit=="is pregnant"?false:true
+            badOutCon = badOutConPosit=="is pregnant"?false:badOutCon
             
             var confound = true
             var confoundPosit = userInput[14]!=''? userInput[14].substring(8).replaceAll('has ', '').replaceAll('.', '').trim() : confound=false 
             
             //text if challenge can be done
-            var setting = "If an oral challenge is done, patient must be stable (ie. SBP>100, HR<120, using <4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page."     
+            var setting = "If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page."     
             //insert logic for score
             var decisionBox = byID('decision');
             if (preg) {
