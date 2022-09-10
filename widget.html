@@ -482,21 +482,25 @@
                             </tr>
                             
                             <tr class="questionTableRow">
-                                <td style="padding-top: 1em;">Do they have any of the following respiratory diagnoses:</td>
-                                <td style="padding-top: 1em;">
-                                    <label class="checkmarkcontainer"> Uncontrolled asthma
+                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following respiratory diagnoses:</td>
+                                
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td colspan="2" style="text-align: left">
+                                    <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled asthma
                                         <input type="checkbox" name="unconasthma" value="uncontrolled asthma">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="checkmarkcontainer"> Severe COPD
+                                    <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Severe COPD
                                         <input type="checkbox" name="sevCOPD" value="severe COPD">
                                         <span class="checkmark"></span>
                                     </label>          
-                                    <label class="checkmarkcontainer"> Interstitial lung disease
+                                    <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Interstitial lung disease
                                         <input type="checkbox" name="ild">
                                         <span class="checkmark"></span>
-                                    </label>                      
+                                    </label>  
                                 </td>
+                                
                             </tr>
                             <tr class="questionTableRow">
                                 <td>Are they using a beta blocker?</td>
@@ -517,30 +521,39 @@
                                 </td>
                             </tr>
                             <tr class="questionTableRow">
-                                <td style="padding-top: 1em;">Do they have any of the following conditions that may confound oral challenge interpretation?</td>
-                                <td style="padding-top: 1em;">
-                                    <label class="checkmarkcontainer"> Uncontrolled ezcema
-                                        <input type="checkbox" name="unconezcema">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="checkmarkcontainer"> Uncontrolled allergic rhinitis
-                                        <input type="checkbox" name="unconallrhin">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="checkmarkcontainer"> Uncontrolled Urticaria
-                                        <input type="checkbox" name="chronurt">
-                                        <span class="checkmark"></span>
-                                    </label>     
-                                    <label class="checkmarkcontainer"> Mastocytosis
-                                        <input type="checkbox" name="mastocyt">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="checkmarkcontainer"> An acute infection
-                                        <input type="checkbox" name="acuteinfect">
-                                        <span class="checkmark"></span>
-                                    </label>                               
+                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following conditions that may confound oral challenge interpretation?</td>
+                                
+                                                             
                                 </td>
                             </tr>
+                            <tr class="questionTableRow">
+                                <td colspan="2">
+                                    <div style="text-align: left;">
+                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled ezcema
+                                            <input type="checkbox" name="unconezcema">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled allergic rhinitis
+                                            <input type="checkbox" name="unconallrhin">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled Urticaria
+                                            <input type="checkbox" name="chronurt">
+                                            <span class="checkmark"></span>
+                                        </label>     
+                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Mastocytosis
+                                            <input type="checkbox" name="mastocyt">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> An acute infection
+                                            <input type="checkbox" name="acuteinfect">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>      
+                                </td>
+                                
+                            </tr>
+                            
                         </table>                   
 
                         <!-- For HPI questions, make in dropdown -->
@@ -1104,15 +1117,15 @@
             //insert logic for score
             var decisionBox = byID('decision');
             if (preg) {
-                decisionBox.innerHTML = "Overall recommend a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. Typically preceding challenge we would undertake skin testing and subsequently a 2 step oral challenge. "
+                decisionBox.innerHTML = "Overall recommend a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. Typically preceding challenge we would undertake skin testing and subsequently a 2 step oral challenge."
                 if (score == 3 || score == 4) {
-                    decisionBox.innerHTML = decisionBox.innerHTML + "In addition, they are at moderate or high risk of having a true allergy."
+                    decisionBox.innerHTML = decisionBox.innerHTML + " In addition, they are at moderate or high risk of having a true allergy."
                 }
                 if (badOutCon) {
-                    decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, their history is significant for " + badOutConPosit + ", which creates higher risk with a challenge. "
+                    decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, their history is significant for " + badOutConPosit + ", which creates higher risk with a challenge."
                 }
                 if (confound){
-                    decisionBox.innerHTML = decisionBox.innerHTML + "The presence of "+confoundPosit + " also would make interpretation of results difficult."
+                    decisionBox.innerHTML = decisionBox.innerHTML + " The presence of "+confoundPosit + " also would make interpretation of results difficult."
                 }
                 return decisionBox.innerHTML
             }
@@ -1152,9 +1165,15 @@
                 var q6 = byID("q6")
                 var q7 = byID("q7")
                 var uncontrolAsthma = byN("unconasthma")[0]
-                var unconezcema = byN("unconezcema")[0]
                 var severCOPD = byN("sevCOPD")[0]
+                var ild = byN("ild")[0]
+
+                var unconezcema = byN("unconezcema")[0]                
                 var mastocyt = byN("mastocyt")[0]
+                var unconAllrhin = byN("unconallrhin")[0]
+                var unconUrtic = byN('chronurt')[0]
+                var acuteInfect = byN('acuteinfect')[0]
+
                 var scoredisplay = byID('scorereport');
                 var decisionBox = byID('decision');
                 var score = 0;
@@ -1172,7 +1191,7 @@
                     preg = q5.checked ? true : false
                     decisionText(score, preg)
                 });
-                var otherSwit = [q6, q7, uncontrolAsthma, unconezcema, severCOPD, mastocyt]
+                var otherSwit = [q6, q7, uncontrolAsthma, unconezcema, severCOPD, mastocyt,ild,unconAllrhin,unconUrtic,acuteInfect]
                 otherSwit.forEach(element => {
                     element.addEventListener('change', function () {
                         decisionText(score, preg)
