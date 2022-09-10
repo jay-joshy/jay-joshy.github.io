@@ -420,347 +420,357 @@
         <!-- Need features in order for the text to properly show as white -->
         <div class="container-fluid features">
             <div class="container-fluid col-lg-7 col-md-7 col-sm-12 float-sm-end" style="padding-bottom: 5vh;">
+                <!-- darkbox to contain penfast tool -->
+                
                 <div class="cleandarkBox" style="padding-bottom: 2vh;" id="toolBox">
-                    <table class="questionTable" style="width:100%;">
-                        <tr>
-                            <td colspan="2">
-                                <h3 class="feature-subtitle" style="text-align: center;padding-bottom: 1rem;">
-                                    Only patients with a reported penicillin allergy are eligible <br>(ie. penicillin,
-                                    amoxicillin, ampicillin)
-                                </h3>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td><span style="font-weight: bold;">F</span> - Five years or less since reaction</td>
-                            <td style="width:120px;">
-                                <label class="qswitch">
-                                    <input type="checkbox" unchecked id="q1">
-                                    <span class="qslider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td><span style="font-weight: bold;">A</span> - Anaphylaxis or angioedema</td>
-                            <td>
-                                <label class="qswitch">
-                                    <input type="checkbox" unchecked id="q2">
-                                    <span class="qslider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td> <span style="font-weight: bold;">S</span> - Severe cutaneous adverse reaction
-                            </td>
-                            <td>
-                                <label class="qswitch">
-                                    <input type="checkbox" unchecked id="q3">
-                                    <span class="qslider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRowBottom">
-                            <td><span style="font-weight: bold;">T</span> - Treatment required for reaction</td>
-                            <td>
-                                <label class="qswitch">
-                                    <input type="checkbox" unchecked id="q4">
-                                    <span class="qslider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td>Are they pregnant?</td>
-                            <td>
-                                <label class="qswitch">
-                                    <input type="checkbox" unchecked id="q5">
-                                    <span class="qslider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td>Are they using a beta blocker?</td>
-                            <td>
-                                <label class="qswitch">
-                                    <input type="checkbox" unchecked id="q6">
-                                    <span class="qslider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td>Do they have known severe heart disease (uncontrolled CHF, prior MI, CAD)?</td>
-                            <td>
-                                <label class="qswitch">
-                                    <input type="checkbox" unchecked id="q7">
-                                    <span class="qslider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td style="padding-top: 1em;">Do they have any of the following respiratory diagnoses:</td>
-                            <td style="padding-top: 1em;">
-                                <label class="checkmarkcontainer"> Uncontrolled asthma
-                                    <input type="checkbox" name="unconasthma" value="uncontrolled asthma">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="checkmarkcontainer"> Severe COPD
-                                    <input type="checkbox" name="sevCOPD" value="severe COPD">
-                                    <span class="checkmark"></span>
-                                </label>                                
-                            </td>
-                        </tr>
-                        <tr class="questionTableRow">
-                            <td style="padding-top: 1em;">Do they have any of the following conditions that may confound oral challenge interpretation?</td>
-                            <td style="padding-top: 1em;">
-                                <label class="checkmarkcontainer"> Uncontrolled ezcema
-                                    <input type="checkbox" name="unconezcema">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="checkmarkcontainer"> Uncontrolled allergic rhinitis
-                                    <input type="checkbox" name="unconallrhin">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="checkmarkcontainer"> Chronic Urticaria
-                                    <input type="checkbox" name="chronurt">
-                                    <span class="checkmark"></span>
-                                </label>     
-                                <label class="checkmarkcontainer"> Mastocytosis
-                                    <input type="checkbox" name="mastocyt">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="checkmarkcontainer"> An acute infection
-                                    <input type="checkbox" name="acuteinfect">
-                                    <span class="checkmark"></span>
-                                </label>                               
-                            </td>
-                        </tr>
-                    </table>                    
+                    <!-- scrollbox height should be at least to the expand thing -->
+                    <div class="scrollbox" style="overflow:auto;" id="toolscrollbox">
+                        <table class="questionTable" style="width:100%;">
+                            <tr>
+                                <td colspan="2">
+                                    <h3 class="feature-subtitle" style="text-align: center;padding-bottom: 1rem;">
+                                        Only patients with a reported penicillin allergy are eligible <br>(ie. penicillin,
+                                        amoxicillin, ampicillin)
+                                    </h3>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td><span style="font-weight: bold;">F</span> - Five years or less since reaction</td>
+                                <td style="width:120px;">
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q1">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td><span style="font-weight: bold;">A</span> - Anaphylaxis or angioedema</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q2">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td> <span style="font-weight: bold;">S</span> - Severe cutaneous adverse reaction
+                                </td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q3">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRowBottom">
+                                <td><span style="font-weight: bold;">T</span> - Treatment required for reaction</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q4">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Are they pregnant?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q5">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            
+                            <tr class="questionTableRow">
+                                <td style="padding-top: 1em;">Do they have any of the following respiratory diagnoses:</td>
+                                <td style="padding-top: 1em;">
+                                    <label class="checkmarkcontainer"> Uncontrolled asthma
+                                        <input type="checkbox" name="unconasthma" value="uncontrolled asthma">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="checkmarkcontainer"> Severe COPD
+                                        <input type="checkbox" name="sevCOPD" value="severe COPD">
+                                        <span class="checkmark"></span>
+                                    </label>          
+                                    <label class="checkmarkcontainer"> Interstitial lung disease
+                                        <input type="checkbox" name="ild">
+                                        <span class="checkmark"></span>
+                                    </label>                      
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Are they using a beta blocker?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q6">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Do they have known severe heart disease (CHF, CAD, arrhythmogenic, valvular)?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q7">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td style="padding-top: 1em;">Do they have any of the following conditions that may confound oral challenge interpretation?</td>
+                                <td style="padding-top: 1em;">
+                                    <label class="checkmarkcontainer"> Uncontrolled ezcema
+                                        <input type="checkbox" name="unconezcema">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="checkmarkcontainer"> Uncontrolled allergic rhinitis
+                                        <input type="checkbox" name="unconallrhin">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="checkmarkcontainer"> Uncontrolled Urticaria
+                                        <input type="checkbox" name="chronurt">
+                                        <span class="checkmark"></span>
+                                    </label>     
+                                    <label class="checkmarkcontainer"> Mastocytosis
+                                        <input type="checkbox" name="mastocyt">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="checkmarkcontainer"> An acute infection
+                                        <input type="checkbox" name="acuteinfect">
+                                        <span class="checkmark"></span>
+                                    </label>                               
+                                </td>
+                            </tr>
+                        </table>                   
 
+                        <!-- For HPI questions, make in dropdown -->
+                        <div style="padding-bottom: 2vh;" id="linksbox">
+                            <h3 class="feature-subtitle dropdown" style="padding-bottom: 0.5rem; text-align: center;"
+                                data-bs-toggle="collapse" data-bs-target="#links" id="collapseText">
+                                TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: <i class="bi bi-plus-lg" style="color: white;"
+                                    id="refIcon"></i>
+                            </h3>
+                            <div id="links" class="collapse">
+                                <table class="questionTable" style="width:100%;">
+                                    <tr class="questionTableRow">
+                                        <td><label for="penicillin">What penicillin was it?</label></td>
+                                        <td style="width:120px;text-align: right;">
+                                            <input type="input-group-text" id="penicillin" name="penicillin"
+                                                placeholder="Type drug name ... " class="drop">
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td style="padding-top: 0em;"><label for="indication">What was the indication for
+                                                the penicillin?</label></td>
+                                        <td style="padding-top: 0em; text-align: right;">
+                                            <select name="indication" id="indication" class="form-select drop">
+                                                <option value="sinus infection">Sinus Infection</option>
+                                                <option value="skin infection">Skin Infection</option>
+                                                <option value="lung infection">Lung Infection</option>
+                                                <option value="urinary infection">Urinary Infection</option>
+                                                <option value="viral infection">Viral Infection</option>
+                                                <option value="unspecified infection">Other Infection</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td><label for="antibioticBefore">Have they used penicillins without issue prior to
+                                                their first reaction?</label></td>
+                                        <td style="padding-top: 0em;text-align: right;">
+                                            <select name="antibioticBefore" id="antibioticBefore" class="form-select drop">
+                                                <option value="never used penicillins">Never</option>
+                                                <option value="used penicillins a few times">A few times</option>
+                                                <option value="used penicillins many times">Many times</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td><label for="reactionTiming">How soon after starting a penicillin did they have a
+                                                reaction?</label></td>
+                                        <td style="text-align: right;">
+                                            <select name="reactionTiming" id="reactionTiming" class="form-select drop">
+                                                <option value="Within an hour">Within 1 hour</option>
+                                                <option value="Within one day">Within 1 day</option>
+                                                <option value="After one day">After 1 day</option>
+                                                <option value="After one week">After 1 week</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td><label for="whenreact">More specifically, when was their last reaction?</label>
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <select name="whenreact" id="whenreact" class="form-select drop">
+                                                <option value="less than 5 weeks ago">Less than 5 weeks ago</option>
+                                                <option value="less than 5 months ago">More than 5 weeks ago</option>
+                                                <option value="less than 5 years ago">Less than 5 years ago</option>
+                                                <option value="greater than 5 years ago">More than 5 years ago</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td style="padding-top: 1em;padding-bottom: 0.5em;"><label for="whatreaction">What
+                                                was their reaction?</label></td>
+                                        <td style="padding-top: 1em;padding-bottom: 0.5em;">
+                                            <label class="checkmarkcontainer"> Rash
+                                                <input type="checkbox" name="rash" value="rash"
+                                                    onclick="showOtherOptions('specificRash','rash')">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="checkmarkcontainer"> Breathing difficulty
+                                                <input type="checkbox" name="dyspnea" value="dyspnea">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="checkmarkcontainer"> Fainting/Syncope
+                                                <input type="checkbox" name="syncope" value="syncope">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="checkmarkcontainer"> Angioedema
+                                                <input type="checkbox" name="angioedema" value="angioedema">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="checkmarkcontainer"> Other
+                                                <input type="checkbox" name="otherReactSym" value="otherReactSym"
+                                                    onclick="showOtherOptions('otherReactSym','otherReactSym')">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr style="display:none;" id="otherReactSym">
+                                        <td colspan="2">
+                                            <p style="text-align: center;">What other symptoms?</p>
+                                            <div style="text-align: center;">
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em;"> Diarrhea
+                                                    <input type="checkbox" name="diarrhea" value="diarrhea">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em"> AKI
+                                                    <input type="checkbox" name="aki" value="acute kidney injury">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em"> Vomiting
+                                                    <input type="checkbox" name="vomiting" value="vomiting">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em"> Liver injury
+                                                    <input type="checkbox" name="liverInjury" value="liver injury">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr style="display:none;" id="specificRash">
+                                        <td colspan="2" style="padding-top:1em">
+                                            <p style="text-align: center;">What did the rash look like?</p>
+                                            <div style="text-align: center;">
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em;"> Mobiliform
+                                                    <input type="checkbox" name="mobiliform" value="mobiliform">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em"> Urticarial
+                                                    <input type="checkbox" name="urticarial" value="urticarial">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em"> SJS rash
+                                                    <input type="checkbox" name="SJS" value="desquaminating">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="checkmarkcontainer"
+                                                    style="display: inline-block; padding-right: 1em"> Other
+                                                    <input type="checkbox" name="otherrash" value="another morphology">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td>Was there any involvement of the mouth or genitalia?</td>
+                                        <td style="text-align: right;">
+                                            <label class="qswitch">
+                                                <input type="checkbox" unchecked id="mouthgent">
+                                                <span class="qslider round"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td><label for="treatment">How was their reaction treated?</label></td>
+                                        <td style="text-align: right;">
+                                            <select name="treatment" id="treatment" class="form-select drop">
+                                                <option value="nothing besides stopping the penicillin">No treatment aside
+                                                    from stopping penicillin</option>
+                                                <option value="IM epinephrine">Epinephrine</option>
+                                                <option value="antihistamines">Antihistamines</option>
+                                                <option value="'something else, unsure'">Unsure</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td><label for="repeatAbx">Have they had <b>any</b> type of penicillin since the
+                                                incident? </label></td>
+                                        <td style="text-align: right;">
+                                            <select name="repeatAbx" id="repeatAbx" class="form-select drop">
+                                                <option value="have not">No</option>
+                                                <option value="have">Yes</option>
+                                                <option value="are unsure if they have">Unsure</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td><label for="otherallergies">What other allergies do they have?</label></td>
+                                        <td style="text-align: right;">
+                                            <input type="input-group-text" id="otherallergies" name="otherallergies"
+                                                placeholder="Type here ... " class="drop">
+                                        </td>
+                                    </tr>
+                                    <tr class="questionTableRow">
+                                        <td><label for="anaphylaxis">Have they ever had a formally diagnosed episode of
+                                                Anaphylaxis?</label></td>
+                                        <td style="text-align: right;">
+                                            <select name="anaphylaxis" id="anaphylaxis" class="form-select drop">
+                                                <option value="have not">No </option>
+                                                <option value="have">Yes</option>
+                                                <option value="are unsure if they have">Unsure</option>
+                                            </select>
+                                        </td>
+                                    </tr>
 
-                    <!-- For HPI questions, make in dropdown -->
-                    <div style="padding-bottom: 2vh;" id="linksbox">
-                        <h3 class="feature-subtitle dropdown" style="padding-bottom: 0.5rem; text-align: center;"
-                            data-bs-toggle="collapse" data-bs-target="#links">
-                            To generate HPI, answer below questions: <i class="bi bi-plus-lg" style="color: white;"
-                                id="refIcon"></i>
-                        </h3>
-                        <div id="links" class="collapse">
-                            <table class="questionTable" style="width:100%;">
-                                <tr class="questionTableRow">
-                                    <td><label for="penicillin">What penicillin was it?</label></td>
-                                    <td style="width:120px;text-align: right;">
-                                        <input type="input-group-text" id="penicillin" name="penicillin"
-                                            placeholder="Type drug name ... " class="drop">
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td style="padding-top: 0em;"><label for="indication">What was the indication for
-                                            the penicillin?</label></td>
-                                    <td style="padding-top: 0em; text-align: right;">
-                                        <select name="indication" id="indication" class="form-select drop">
-                                            <option value="sinus infection">Sinus Infection</option>
-                                            <option value="skin infection">Skin Infection</option>
-                                            <option value="lung infection">Lung Infection</option>
-                                            <option value="urinary infection">Urinary Infection</option>
-                                            <option value="viral infection">Viral Infection</option>
-                                            <option value="unspecified infection">Other Infection</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td><label for="antibioticBefore">Have they used penicillins without issue prior to
-                                            their first reaction?</label></td>
-                                    <td style="padding-top: 0em;text-align: right;">
-                                        <select name="antibioticBefore" id="antibioticBefore" class="form-select drop">
-                                            <option value="never used penicillins">Never</option>
-                                            <option value="used penicillins a few times">A few times</option>
-                                            <option value="used penicillins many times">Many times</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td><label for="reactionTiming">How soon after starting a penicillin did they have a
-                                            reaction?</label></td>
-                                    <td style="text-align: right;">
-                                        <select name="reactionTiming" id="reactionTiming" class="form-select drop">
-                                            <option value="Within an hour">Within 1 hour</option>
-                                            <option value="Within one day">Within 1 day</option>
-                                            <option value="After one day">After 1 day</option>
-                                            <option value="After one week">After 1 week</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td><label for="whenreact">More specifically, when was their last reaction?</label>
-                                    </td>
-                                    <td style="text-align: right;">
-                                        <select name="whenreact" id="whenreact" class="form-select drop">
-                                            <option value="less than 5 weeks ago">Less than 5 weeks ago</option>
-                                            <option value="less than 5 months ago">More than 5 weeks ago</option>
-                                            <option value="less than 5 years ago">Less than 5 years ago</option>
-                                            <option value="greater than 5 years ago">More than 5 years ago</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td style="padding-top: 1em;padding-bottom: 0.5em;"><label for="whatreaction">What
-                                            was their reaction?</label></td>
-                                    <td style="padding-top: 1em;padding-bottom: 0.5em;">
-                                        <label class="checkmarkcontainer"> Rash
-                                            <input type="checkbox" name="rash" value="rash"
-                                                onclick="showOtherOptions('specificRash','rash')">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="checkmarkcontainer"> Breathing difficulty
-                                            <input type="checkbox" name="dyspnea" value="dyspnea">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="checkmarkcontainer"> Fainting/Syncope
-                                            <input type="checkbox" name="syncope" value="syncope">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="checkmarkcontainer"> Angioedema
-                                            <input type="checkbox" name="angioedema" value="angioedema">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="checkmarkcontainer"> Other
-                                            <input type="checkbox" name="otherReactSym" value="otherReactSym"
-                                                onclick="showOtherOptions('otherReactSym','otherReactSym')">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr style="display:none;" id="otherReactSym">
-                                    <td colspan="2">
-                                        <p style="text-align: center;">What other symptoms?</p>
-                                        <div style="text-align: center;">
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em;"> Diarrhea
-                                                <input type="checkbox" name="diarrhea" value="diarrhea">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em"> AKI
-                                                <input type="checkbox" name="aki" value="acute kidney injury">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em"> Vomiting
-                                                <input type="checkbox" name="vomiting" value="vomiting">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em"> Liver injury
-                                                <input type="checkbox" name="liverInjury" value="liver injury">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr style="display:none;" id="specificRash">
-                                    <td colspan="2" style="padding-top:1em">
-                                        <p style="text-align: center;">What did the rash look like?</p>
-                                        <div style="text-align: center;">
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em;"> Mobiliform
-                                                <input type="checkbox" name="mobiliform" value="mobiliform">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em"> Urticarial
-                                                <input type="checkbox" name="urticarial" value="urticarial">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em"> SJS rash
-                                                <input type="checkbox" name="SJS" value="desquaminating">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="checkmarkcontainer"
-                                                style="display: inline-block; padding-right: 1em"> Other
-                                                <input type="checkbox" name="otherrash" value="another morphology">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td>Was there any involvement of the mouth or genitalia?</td>
-                                    <td style="text-align: right;">
-                                        <label class="qswitch">
-                                            <input type="checkbox" unchecked id="mouthgent">
-                                            <span class="qslider round"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td><label for="treatment">How was their reaction treated?</label></td>
-                                    <td style="text-align: right;">
-                                        <select name="treatment" id="treatment" class="form-select drop">
-                                            <option value="nothing besides stopping the penicillin">No treatment aside
-                                                from stopping penicillin</option>
-                                            <option value="IM epinephrine">Epinephrine</option>
-                                            <option value="antihistamines">Antihistamines</option>
-                                            <option value="'something else, unsure'">Unsure</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td><label for="repeatAbx">Have they had <b>any</b> type of penicillin since the
-                                            incident? </label></td>
-                                    <td style="text-align: right;">
-                                        <select name="repeatAbx" id="repeatAbx" class="form-select drop">
-                                            <option value="have not">No</option>
-                                            <option value="have">Yes</option>
-                                            <option value="are unsure if they have">Unsure</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td><label for="otherallergies">What other allergies do they have?</label></td>
-                                    <td style="text-align: right;">
-                                        <input type="input-group-text" id="otherallergies" name="otherallergies"
-                                            placeholder="Type here ... " class="drop">
-                                    </td>
-                                </tr>
-                                <tr class="questionTableRow">
-                                    <td><label for="anaphylaxis">Have they ever had a formally diagnosed episode of
-                                            Anaphylaxis?</label></td>
-                                    <td style="text-align: right;">
-                                        <select name="anaphylaxis" id="anaphylaxis" class="form-select drop">
-                                            <option value="have not">No </option>
-                                            <option value="have">Yes</option>
-                                            <option value="are unsure if they have">Unsure</option>
-                                        </select>
-                                    </td>
-                                </tr>
-
-                            </table>
+                                </table>
+                            </div>
+                        
                         </div>
                     </div>
+                
                 </div>
+                <!-- decision box with buttons -->
                 <div class="whitebox">
                     <h3 class="feature-subtitle">PEN-FAST SCORE:</h3>
                     <p id="scorereport"></p>
                     <h3 class="feature-subtitle">Next Steps:</h3>
                     <p id="decision">
-                        Patient is safe for oral challenge without referral to allergist. [insert rational]
-                        </br>
+                        Patient is safe for oral challenge without referral to allergist.                   
+                        If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page.
                     </p>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-primary" type="button" style="background-color: black;"
-                            onclick="createHPI_copypaste()">Copy Paste HPI</button>
-                        <div class="container" style="width: 100%">
-                            <div class="row">
-                                <div class="col-md">
-                                    <button class="btn btn-primary" type="button"
-                                        style="background-color: black;width: 100%;"
-                                        onclick="createPDFSummary()">Generate PDF referral link</button>
-                                </div>
-                                <div class="col-md">
-                                    <button class="btn btn-primary" type="button"
-                                        style="background-color: red;width: 100%;" id="pdfLinkButton"><a target ="_blank" id="pdfLink">PDF LINK NOT READY</a><br></button>
-                                </div>
-                            </div>
-                        </div>
+                    <div style="text-align: center;">
+                    <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
+                     <p style="display: inline;" id="indicText">-- HPI and PDF disabled. Requires penicillin name --</p> 
+                    <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
+                    </div>
+                    <div class="d-grid gap-2">
+                        
+                        <button class="btn btn-primary disabled" type="button" style="background-color: black;"
+                            onclick="createHPI_copypaste()" id="hpiBut">Copy Paste HPI</button>
+                        <a href = "#"class="btn btn-primary disabled" aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()" id="pdfBut">Generated PDF referral link.<br>Right-click and open in new tab</a>
+                            
+
+  
+                                
                     </div>
                     </br>
                 </div>
@@ -829,15 +839,37 @@
             }
 
         }
-        function getH() {
-            return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 400 : document.getElementById('toolBox').getBoundingClientRect().height + document.getElementById('toolInfo').getBoundingClientRect().height + 500
-        }
+        
         function byID(id) {
             return document.getElementById(id)
         }
         function byN(name) {
             return document.getElementsByName(name)
         }
+                
+        byID("penicillin").addEventListener('input', function (event) {
+            // do stuff here
+            if(byID("penicillin").value!=''){
+                byID("indicText").innerHTML = "HPI and PDF buttons enabled"
+                var indicBut = document.getElementsByClassName("indicButton")
+                indicBut[0].setAttribute("style","background-color: green;border: green")
+                indicBut[1].setAttribute("style","background-color: green;border: green")
+                
+                byID('pdfBut').classList.remove('disabled')
+                byID('pdfBut').setAttribute("aria-disabled","false")
+                byID('hpiBut').classList.remove('disabled')
+                
+            }else{
+                byID("indicText").innerHTML = "-- HPI and PDF disabled. Requires penicillin name --"
+                var indicBut = document.getElementsByClassName("indicButton")
+                indicBut[0].setAttribute("style","background-color: red;border: red;")
+                indicBut[1].setAttribute("style","background-color: red;border: red;")
+                byID('pdfBut').classList.add("disabled");
+                byID('pdfBut').setAttribute("aria-disabled","true")
+                byID('hpiBut').classList.add("disabled");
+            }
+        });
+        
         //to get score use method below
         function getInput() {
             var q1 = byID('q1').checked
@@ -853,18 +885,19 @@
             }
             var pregnant = byID('q5').checked ? '+is pregnant' : "pregnancy" 
             var betaBlock = byID("q6").checked ? '+has current beta-blocker use' : "current beta-blocker use" 
-            var heartDisease = byID("q7").checked ? '+has significant heart disease (CAD, HF, or prior MI)' : "significant cardiac disease (CAD, HF, or prior MI)"  
+            var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF, CAD, arrhythmogenic, valvular)' : "significant cardiac disease (CHF, CAD, arrhythmogenic, valvular)"  
             var uncontrolAsthma = byN("unconasthma")[0].checked ? '+has uncontrolled asthma' : 'uncontrolled asthma' 
             var unconezcema = byN("unconezcema")[0].checked ? '+has uncontrolled ezcema' : 'uncontrolled ezcema' 
             var severCOPD = byN("sevCOPD")[0].checked ? '+has severe COPD' : 'severe COPD' 
+            var ild = byN("ild")[0].checked ? '+has ILD' : 'ILD'
             var mastocyt = byN("mastocyt")[0].checked ? '+has mastocytosis' : 'mastocytosis' 
             var unconAllrhin = byN("unconallrhin")[0].checked ? '+has uncontrolled allergic rhinitis' : 'uncontrolled allergic rhinitis' 
             var acuteInfect = byN("acuteinfect")[0].checked ? '+has current acute infection' : 'current acute infection' 
-            var chronUrt = byN("chronurt")[0].checked ? '+has chronic urticaria' : 'chronic urticaria' 
+            var chronUrt = byN("chronurt")[0].checked ? '+has uncontrolled baseline urticaria' : 'uncontrolled baseline urticaria' 
 
             var badOutConPosit = []
             var badOutConNeg = []
-            var badOutConL = [pregnant, betaBlock, heartDisease, uncontrolAsthma, severCOPD]
+            var badOutConL = [pregnant, betaBlock, heartDisease, uncontrolAsthma, severCOPD,ild]
             for (x in badOutConL) {
                 if (badOutConL[x].charAt(0) == "+") {
                     badOutConL[x] = badOutConL[x].replace('+', '')
@@ -948,7 +981,7 @@
             var penAfter = byID("repeatAbx").value 
             var otherallergies = byID("otherallergies").value == "" ? "No other allergies known." : byID("otherallergies").value  //26
             var anap = byID("anaphylaxis").value 
-            var data = [score, pregnant, badOutConDesc, confoundDesc, sympDesc, penicillin,indication,abxBefore,howSoonAfter,whenWasReact,treatment,penAfter,otherallergies]
+            var data = [score, pregnant, badOutConDesc, confoundDesc, sympDesc, penicillin,indication,abxBefore,howSoonAfter,whenWasReact,treatment,penAfter,otherallergies,badOutConPosit,confoundPosit]
             return data
         }
 
@@ -957,14 +990,8 @@
         // input is array of outputs for thing
         function createPDFSummary() {
             userInput = getInput()
-            var linkButton = byID("pdfLinkButton")
-            var pdfLink = byID("pdfLink")
-            if (userInput[5] == "") {
-                alert("please type name of penicillin.")
-                pdfLink.innerHTML = "Enter Penicillin Name"
-                linkButton.setAttribute("style","background-color:red")
-                return
-            }
+            var pdfBut = byID("pdfBut")           
+            
             // Default export is a4 paper, portrait, using millimeters for units
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
@@ -994,13 +1021,13 @@
             doc.text("Comments below:", 20, 240)
             //doc.output('dataurlnewwindow');
 
-            pdfLink.innerHTML = "PNF LINK<br>Right click and open in new tab"
-            pdfLink.href = doc.output("bloburl")
-            linkButton.setAttribute("style","background-color:green")
-
-
-
-            
+            pdfBut.href = doc.output("bloburl")
+                    
+        }
+        window.oncontextmenu = function () {
+            if(byID("penicillin").value!=''){
+            createPDFSummary()
+            }            
         }
 
         function createHPI_copypaste() {
@@ -1062,41 +1089,15 @@
             return description;
         }
         function decisionText(score, preg = false) {
-            var pen = byID("penicillin").value
-            var betaBlock = byID("q6").checked ? '+current beta-blocker use' : "current beta-blocker use" 
-            var heartDisease = byID("q7").checked ? '+significant heart disease (CAD, HF, or prior MI)' : "significant cardiac disease (CAD, HF, or prior MI)"  
-            var uncontrolAsthma = byN("unconasthma")[0].checked ? '+uncontrolled asthma' : 'uncontrolled asthma' 
-            var unconezcema = byN("unconezcema")[0].checked ? '+uncontrolled ezcema' : 'uncontrolled ezcema' 
-            var severCOPD = byN("sevCOPD")[0].checked ? '+severe COPD' : 'severe COPD' 
-            var mastocyt = byN("mastocyt")[0].checked ? '+mastocytosis' : 'mastocytosis' 
-            var unconAllrhin = byN("unconallrhin")[0].checked ? '+uncontrolled allergic rhinitis' : 'uncontrolled allergic rhinitis' 
-            var acuteInfect = byN("acuteinfect")[0].checked ? '+current acute infection' : 'current acute infection' 
-            var chronUrt = byN("chronurt")[0].checked ? '+chronic urticaria' : 'chronic urticaria' 
-
-            var badOutConPosit = []
-            var badOutConL = [betaBlock, heartDisease, uncontrolAsthma, severCOPD]
-            var badOutCon = false            
-            for (x in badOutConL) {
-                if (badOutConL[x].charAt(0) == "+") {
-                    badOutConL[x] = badOutConL[x].replace('+', '')
-                    badOutConPosit.push(badOutConL[x])
-                    badOutCon = true
-                }                
-            }
-            badOutConPosit = listGrammar(badOutConPosit.join(", "))       
-
-            var confoundPosit = []
-            var confound = false
-            var confoundL = [unconezcema,mastocyt,unconAllrhin,acuteInfect,chronUrt]
-            for (x in confoundL) {
-                if (confoundL[x].charAt(0) == "+") {
-                    confoundL[x] = confoundL[x].replace('+', '')
-                    confoundPosit.push(confoundL[x])
-                    confound = true
-                }
-                
-            }
-            confoundPosit = listGrammar(confoundPosit.join(", "))       
+            var userInput = getInput()
+            var pen = userInput[5]
+            var badOutCon = true
+            // need to remove "has"
+            var badOutConPosit = userInput[13]!=''? userInput[13].substring(8).replaceAll('has ', '').replaceAll('is pregnant, ', '').replaceAll('is pregnant and ', '').replaceAll('.', '').trim() : badOutCon=false
+            badOutCon = badOutConPosit=="is pregnant"?false:true
+            
+            var confound = true
+            var confoundPosit = userInput[14]!=''? userInput[14].substring(8).replaceAll('has ', '').replaceAll('.', '').trim() : confound=false 
             
             //text if challenge can be done
             var setting = "If an oral challenge is done, patient must be stable (ie. SBP>100, HR<120, using <4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page."     
@@ -1108,7 +1109,7 @@
                     decisionBox.innerHTML = decisionBox.innerHTML + "In addition, they are at moderate or high risk of having a true allergy."
                 }
                 if (badOutCon) {
-                    decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, their past history is significant for " + badOutConPosit + "."
+                    decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, their history is significant for " + badOutConPosit + ", which creates higher risk with a challenge. "
                 }
                 if (confound){
                     decisionBox.innerHTML = decisionBox.innerHTML + "The presence of "+confoundPosit + " also would make interpretation of results difficult."
@@ -1120,7 +1121,7 @@
                     decisionBox.innerHTML = "Patient is likely safe for oral challenge. However, the risks and benefits of a challenge must be carefully considered given the patient's history, and referral to an Allergist may be helpful." 
                     
                     if(badOutCon){
-                        decisionBox.innerHTML = decisionBox.innerHTML + " Namely, their medical history of "+badOutConPosit+" creates higher risk with challenge."
+                        decisionBox.innerHTML = decisionBox.innerHTML + " Namely, their medical history of "+badOutConPosit+" creates higher risk with a challenge."
                     }
                     if(confound){
                         decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, the presence of "+confoundPosit+" would also make interpretation of the results difficult."
@@ -1133,7 +1134,7 @@
                 }
             }
             else {
-                decisionBox.innerHTML = "Continue to avoid "+pen+" for now given high risk of true allergy. Referral to allergy specialist may be able to better clarify their true risk with skin testing and additional measures"
+                decisionBox.innerHTML = "Continue to avoid the penicillin for now given high risk of true allergy. Referral to allergy specialist may be able to better clarify their true risk with skin testing and additional measures"
                 return decisionBox.innerHTML
             }
         }
@@ -1182,33 +1183,37 @@
         tallyScore()
         // SPECIFICALLY FOR THE HPI, NOT FOR OTHERS.
 
-        byID("top").setAttribute("style", "height:" + getH() + "px")
+        
         function collapseIcon(collapseID, iconID) {
             var myCollapsible = byID(collapseID)
-            var baseHeight = getH()
-            var exHeight = window.innerHeight <= window.innerWidth ? 2000 : 3300
-            // act second
+            var collapseText = byID("collapseText")
             myCollapsible.addEventListener('hide.bs.collapse', function () {
                 byID(iconID).className = "bi bi-plus-lg";
-                byID("top").setAttribute("style", "height:" + baseHeight + "px")
-
-                exHeight = getH()
+                collapseText.innerHTML = collapseText.innerHTML.replace("SCROLL DOWN TO SEE QUESTIONS: ","TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ")
             })
             // will act first
             myCollapsible.addEventListener('show.bs.collapse', function () {
                 byID(iconID).className = "bi bi-dash-lg";
-                byID("top").setAttribute("style", "height:" + exHeight + "px")
-                baseHeight = getH()
+                collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ","SCROLL DOWN TO SEE QUESTIONS: ")
             })
-
         }
+        collapseIcon("links", "refIcon")
+        
+        function getH() {
+            return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 400 : document.getElementById('toolBox').getBoundingClientRect().height + document.getElementById('toolInfo').getBoundingClientRect().height + 700
+        }
+
+        byID("top").setAttribute("style", "height:" + getH() + "px")
+        byID('toolscrollbox').setAttribute("style", "max-height:" + document.getElementById('toolBox').getBoundingClientRect().height +"px;overflow:auto;")
+        //byID('toolscrollbox').setAttribute("style", "max-height:800px;overflow:auto;")
+
         //resize background colour dynamically
         window.addEventListener('resize', function (event) {
             // do stuff here
             byID("top").setAttribute("style", "height:" + getH() + "px")
         });
 
-        collapseIcon("links", "refIcon")
+        
         function showOtherOptions(id, name) {
             var row = byID(id)
             var checkbox = byN(name)[0]
