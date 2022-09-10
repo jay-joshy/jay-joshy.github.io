@@ -480,7 +480,24 @@
                                     </label>
                                 </td>
                             </tr>
-                            
+                            <tr class="questionTableRow">
+                                <td>Are they using a beta blocker?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q6">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Do they have known severe heart disease (CHF, CAD, arrhythmogenic, valvular)?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q7">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
                             <tr class="questionTableRow">
                                 <td style="padding-top: 1em;" colspan="2">Do they have any of the following respiratory diagnoses:</td>
                                 
@@ -502,24 +519,7 @@
                                 </td>
                                 
                             </tr>
-                            <tr class="questionTableRow">
-                                <td>Are they using a beta blocker?</td>
-                                <td>
-                                    <label class="qswitch">
-                                        <input type="checkbox" unchecked id="q6">
-                                        <span class="qslider round"></span>
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="questionTableRow">
-                                <td>Do they have known severe heart disease (CHF, CAD, arrhythmogenic, valvular)?</td>
-                                <td>
-                                    <label class="qswitch">
-                                        <input type="checkbox" unchecked id="q7">
-                                        <span class="qslider round"></span>
-                                    </label>
-                                </td>
-                            </tr>
+                            
                             <tr class="questionTableRow">
                                 <td style="padding-top: 1em;" colspan="2">Do they have any of the following conditions that may confound oral challenge interpretation?</td>
                                 
@@ -558,11 +558,13 @@
 
                         <!-- For HPI questions, make in dropdown -->
                         <div style="padding-bottom: 2vh;" id="linksbox">
-                            <h3 class="feature-subtitle dropdown" style="padding-bottom: 0.5rem; text-align: center;"
-                                data-bs-toggle="collapse" data-bs-target="#links" id="collapseText">
-                                TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: <i class="bi bi-plus-lg" style="color: white;"
-                                    id="refIcon"></i>
-                            </h3>
+                            <div style="text-align: center;">
+                                <button class="btn btn-primary feature-subtitle dropdown " style="padding-bottom: 0.5rem; text-align: center;background-color: black; border-color: white;"
+                                    data-bs-toggle="collapse" data-bs-target="#links" id="collapseText">
+                                    TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: <i class="bi bi-plus-lg" style="color: white;"
+                                        id="refIcon"></i>
+                                 </button>
+                            </div>
                             <div id="links" class="collapse">
                                 <table class="questionTable" style="width:100%;">
                                     <tr class="questionTableRow">
@@ -772,13 +774,13 @@
                     </p>
                     <div style="text-align: center;">
                     <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
-                     <p style="display: inline;" id="indicText">-- HPI and PDF disabled. Requires penicillin name --</p> 
+                     <p style="display: inline;" id="indicText"><b>-- HPI and PDF buttons not ready. Requires penicillin name --</b></p> 
                     <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
                     </div>
                     <div class="d-grid gap-2">
                         
                         <button class="btn btn-primary disabled" type="button" 
-                            onclick="createHPI_copypaste()" id="hpiBut">Copy Paste HPI</button>
+                            onclick="createHPI_copypaste()" id="hpiBut" style="border: 0px; background-color:rgba(88, 88, 88, 0.753)">Copy Paste HPI</button>
                         <a target ="_blank" href = "#"class="btn btn-primary disabled" aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()" id="pdfBut">Generated PDF referral link.<br>Desktop: Right-click and open in new tab<br>Mobile: long press and download link</a>
                             
 
@@ -859,7 +861,8 @@
         function byN(name) {
             return document.getElementsByName(name)
         }
-                
+        
+        // enable or disable buttons if no name
         byID("penicillin").addEventListener('input', function (event) {
             // do stuff here
             if(byID("penicillin").value!=''){
@@ -873,7 +876,7 @@
                 byID('hpiBut').classList.remove('disabled')
                 
             }else{
-                byID("indicText").innerHTML = "-- HPI and PDF disabled. Requires penicillin name --"
+                byID("indicText").innerHTML = "-- HPI and PDF buttons not ready. Requires penicillin name --"
                 var indicBut = document.getElementsByClassName("indicButton")
                 indicBut[0].setAttribute("style","background-color: red;border: red;")
                 indicBut[1].setAttribute("style","background-color: red;border: red;")
@@ -882,6 +885,16 @@
                 byID('hpiBut').classList.add("disabled");
             }
         });
+        if(byID("penicillin").value!=''){
+            byID("indicText").innerHTML = "HPI and PDF buttons enabled"
+                var indicBut = document.getElementsByClassName("indicButton")
+                indicBut[0].setAttribute("style","background-color: green;border: green")
+                indicBut[1].setAttribute("style","background-color: green;border: green")
+                
+                byID('pdfBut').classList.remove('disabled')
+                byID('pdfBut').setAttribute("aria-disabled","false")
+                byID('hpiBut').classList.remove('disabled')
+        }
         
         //to get score use method below
         function getInput() {
@@ -898,7 +911,7 @@
             }
             var pregnant = byID('q5').checked ? '+is pregnant' : "pregnancy" 
             var betaBlock = byID("q6").checked ? '+has current beta-blocker use' : "current beta-blocker use" 
-            var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF, CAD, arrhythmogenic, valvular)' : "significant cardiac disease (CHF, CAD, arrhythmogenic, valvular)"  
+            var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF / CAD / arrhythmogenic / valvular)' : "significant cardiac disease (CHF / CAD / arrhythmogenic / valvular)"  
             var uncontrolAsthma = byN("unconasthma")[0].checked ? '+has uncontrolled asthma' : 'uncontrolled asthma' 
             var unconezcema = byN("unconezcema")[0].checked ? '+has uncontrolled ezcema' : 'uncontrolled ezcema' 
             var severCOPD = byN("sevCOPD")[0].checked ? '+has severe COPD' : 'severe COPD' 
@@ -1219,7 +1232,7 @@
         collapseIcon("links", "refIcon")
         
         function getH() {
-            return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 400 : document.getElementById('toolBox').getBoundingClientRect().height + document.getElementById('toolInfo').getBoundingClientRect().height + 700
+            return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 500 : document.getElementById('toolBox').getBoundingClientRect().height + document.getElementById('toolInfo').getBoundingClientRect().height + 700
         }
 
         byID("top").setAttribute("style", "height:" + getH() + "px")
