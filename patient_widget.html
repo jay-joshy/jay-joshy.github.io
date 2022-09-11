@@ -94,11 +94,11 @@
         }
 
         input:checked+.qslider {
-            background-color: #e43205;
+            background-color: #409c5fc2;
         }
 
         input:focus+.qslider {
-            box-shadow: 0 0 1px #e43205;
+            box-shadow: 0 0 1px #409c5fc2;
         }
 
         input:checked+.qslider:before {
@@ -707,7 +707,7 @@
                                     
                                     <tr class="questionTableRow" id="specificRashQ" style="display:none;text-align: center;">
                                         <td colspan="2">
-                                            <p>What did the rash most look like? (Scroll horizontally to see options)</p>
+                                            <p>What did the rash most look like? (you may need to scroll horizontally to see the 4 options)</p>
                                         </td>
 
                                     </tr>
@@ -850,7 +850,7 @@
                     <div class="d-grid gap-2">
 
 
-                        <a target="_blank" href="#" class="btn btn-primary disabled" aria-disabled="true" tabindex="-1"
+                        <a target="_blank" style="background-color: #c70038;" href="#" class="btn btn-primary disabled" aria-disabled="true" tabindex="-1"
                             role="button" onclick="createPDFSummary()" id="pdfBut">PDF referral link.<br>Desktop:
                             Right-click this button and open in new tab<br>Mobile: long press on this button and
                             download
@@ -903,6 +903,7 @@
 
                 byID('pdfBut').classList.remove('disabled')
                 byID('pdfBut').setAttribute("aria-disabled", "false")
+                byID('pdfBut').setAttribute("style","background-color:#409c5fc2")
 
 
             } else {
@@ -912,7 +913,7 @@
                 indicBut[1].setAttribute("style", "background-color: red;border: red;")
                 byID('pdfBut').classList.add("disabled");
                 byID('pdfBut').setAttribute("aria-disabled", "true")
-
+                byID('pdfBut').setAttribute("style","background-color:#C70039")
             }
         });
         if (byID("penicillin").value != '') {
@@ -923,6 +924,7 @@
 
             byID('pdfBut').classList.remove('disabled')
             byID('pdfBut').setAttribute("aria-disabled", "false")
+            byID('pdfBut').setAttribute("style","background-color:#409c5fc2")
 
         }
 
