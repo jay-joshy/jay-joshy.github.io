@@ -105,11 +105,11 @@
         }
 
         input:checked+.qslider {
-            background-color: #e43205;
+            background-color: #409c5fc2;
         }
 
         input:focus+.qslider {
-            box-shadow: 0 0 1px #e43205;
+            box-shadow: 0 0 1px #409c5fc2;
         }
 
         input:checked+.qslider:before {
@@ -504,7 +504,7 @@
                                 </td>
                             </tr>
                             <tr class="questionTableRow">
-                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following respiratory diagnoses:</td>
+                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following respiratory diagnoses?</td>
                                 
                             </tr>
                             <tr class="questionTableRow">
@@ -785,8 +785,8 @@
                     <div class="d-grid gap-2">
                         
                         <button class="btn btn-primary disabled" type="button" 
-                            onclick="createHPI_copypaste()" id="hpiBut" style="border: 0px; background-color:rgba(88, 88, 88, 0.753)">Copy Paste HPI</button>
-                        <a target ="_blank" href = "#"class="btn btn-primary disabled" aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()" id="pdfBut">Generated PDF referral link.<br>Desktop: Right-click and open in new tab<br>Mobile: long press and download link</a>
+                            onclick="createHPI_copypaste()" id="hpiBut" style="border: 0px; background-color:#C70039">Copy Paste HPI</button>
+                        <a target ="_blank" style="background-color: #C70039;" href = "#"class="btn btn-primary disabled" aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()" id="pdfBut">Generated PDF referral link.<br>Desktop: Right-click and open in new tab<br>Mobile: long press and download link</a>
                             
 
   
@@ -879,6 +879,10 @@
                 byID('pdfBut').classList.remove('disabled')
                 byID('pdfBut').setAttribute("aria-disabled","false")
                 byID('hpiBut').classList.remove('disabled')
+                byID('pdfBut').setAttribute("style","background-color:#409c5fc2")
+                byID('hpiBut').setAttribute("style","background-color:#409c5fc2")
+
+                
                 
             }else{
                 byID("indicText").innerHTML = "-- HPI and PDF buttons not ready. Requires penicillin name --"
@@ -888,6 +892,8 @@
                 byID('pdfBut').classList.add("disabled");
                 byID('pdfBut').setAttribute("aria-disabled","true")
                 byID('hpiBut').classList.add("disabled");
+                byID('pdfBut').setAttribute("style","background-color:#C70039")
+                byID('hpiBut').setAttribute("style","background-color:#C70039")
             }
         });
         if(byID("penicillin").value!=''){
@@ -899,6 +905,8 @@
                 byID('pdfBut').classList.remove('disabled')
                 byID('pdfBut').setAttribute("aria-disabled","false")
                 byID('hpiBut').classList.remove('disabled')
+                byID('pdfBut').setAttribute("style","background-color:#409c5fc2")
+                byID('hpiBut').setAttribute("style","background-color:#409c5fc2")
         }
         
         //to get score use method below
