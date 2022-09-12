@@ -20,6 +20,13 @@
     <!-- <link rel="stylesheet" href="css/penfastWidgetCSS.css">  -->
     <!-- cped style -->
     <style>
+        .footer{
+            position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-height: 30vh;
+        }
+        
         /* MAKE BACKGROUND IMG */
         .header {
             background-color: rgba(112, 190, 246, 0.603);
@@ -134,33 +141,41 @@
             content: 'Yes';
         }
 
+        
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+}
 
-        /* white box 
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
-/* BOX FOR DIAG TX */
-        .whitebox {
-            background-color: rgba(255, 255, 255, 0.80);
-            margin-right: 0px;
-            margin-left: 0px;
-            margin-top: 0px;
-            margin-bottom: 1px;
-            border-radius: 10px;
-            padding: 20px;
-            padding-top: 1px;
-            padding-bottom: 1px;
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee150;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
 
-        }
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c9e2e7;
+}
 
-        .scrollbox::-webkit-scrollbar {
-            display: none;
-        }
+#decisionBox::-webkit-scrollbar-thumb:hover {
+  background-color: #00242b;
+}
 
-        .scrollbox {
-            -ms-overflow-style: none;
-            /* IE and Edge */
-            scrollbar-width: none;
-            /* Firefox */
-        }
+#decisionBox::-webkit-scrollbar-thumb {
+  background-color: #00000050;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+#decisionBox::-webkit-scrollbar-thumb:hover {
+  background-color: #000000;
+}
 
 
         .whitebox p {
@@ -278,7 +293,7 @@
 
         /* BOX FOR DIAG TX */
         .whitebox {
-            background-color: rgba(255, 255, 255, 0.80);
+            background-color: rgb(255, 255, 255);
             margin-right: 0px;
             margin-left: 0px;
             margin-top: 0px;
@@ -408,6 +423,11 @@
             margin:0px;
             padding:0px;
         }
+
+        .fixed{
+            position: fixed;
+            width: 100%;
+        }
     </style>
 
 </head>
@@ -421,7 +441,7 @@
             <div class="container-fluid" style="padding-bottom: 5vh;">
                 <!-- darkbox to contain penfast tool -->
 
-                <div class="cleandarkBox" style="padding-bottom: 2vh;" id="toolBox">
+                <div class="cleandarkBox fixed" style="padding-bottom: 2vh;" id="toolBox">
                     <!-- scrollbox height should be at least to the expand thing -->
                     <div class="scrollbox" style="overflow:auto;" id="toolscrollbox">
                         <table class="questionTable" style="width:100%;">
@@ -576,12 +596,14 @@
                         <!-- For HPI questions, make in dropdown -->
                         <div style="padding-bottom: 2vh;" id="linksbox">
                             <div style="text-align: center;padding-bottom: 2rem;">
+                                
                                 <button class="btn btn-primary feature-subtitle dropdown "
                                     style="padding-bottom: 0.5rem; text-align: center;background-color: black; border-color: white;"
                                     data-bs-toggle="collapse" data-bs-target="#links" id="collapseText">
                                     TO GENERATE PDF Referral, ANSWER BELOW QUESTIONS: <i class="bi bi-plus-lg"
-                                        style="color: white;" id="refIcon"></i>
+                                        style="color: white;" id="refIcon" ></i>
                                 </button>
+                                
                             </div>
                             <div id="links" class="collapse">
                                 <table class="questionTable" style="width:100%;">
@@ -632,7 +654,7 @@
                                             </select>
                                         </td>
                                     </tr>
-                                    <tr class="questionTableRow">
+                                    <tr class="questionTableRow" id="jumpto">
                                         <td><label for="whenreact">More specifically, when was your last
                                                 reaction?</label>
                                         </td>
@@ -827,7 +849,7 @@
 
                 </div>
                 <!-- decision box with buttons -->
-                <div class="whitebox">
+                <div class="whitebox footer scrollbox" style="overflow:auto" id="decisionBox">
                     <h3 class="feature-subtitle">CALCULATED RISK:</h3>
                     <p id="scorereport"></p>
                     <h3 class="feature-subtitle">Next Steps:</h3>
@@ -1086,6 +1108,7 @@
             if (byID("penicillin").value != '') {
                 createPDFSummary()
             }
+            
         }
 
         function boldScore(score) {
@@ -1267,8 +1290,12 @@
             // will act first
             myCollapsible.addEventListener('show.bs.collapse', function () {
                 byID(iconID).className = "bi bi-dash-lg";
-                collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE PDF Referral, ANSWER BELOW QUESTIONS: ", "SCROLL DOWN TO SEE QUESTIONS: ")
+                collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE PDF Referral, ANSWER BELOW QUESTIONS: ", "SCROLL DOWN TO SEE QUESTIONS: ")                
             })
+            myCollapsible.addEventListener('shown.bs.collapse', function () {
+                document.getElementById("collapseText").scrollIntoView({behavior: 'smooth'});                
+            })
+            
         }
         collapseIcon("links", "refIcon")
 
@@ -1277,15 +1304,16 @@
         }
 
         byID("top").setAttribute("style", "height:" + getH() + "px")
-        byID('toolscrollbox').setAttribute("style", "max-height:" + document.getElementById('toolBox').getBoundingClientRect().height + "px;overflow:auto;")
-        //byID('toolscrollbox').setAttribute("style", "max-height:800px;overflow:auto;")
+        byID('toolscrollbox').setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
+        
         byID("imgScroll").setAttribute("style", "overflow-x: scroll;height: 30vh;width: " + document.getElementById('toolBox').getBoundingClientRect().width * 0.85 + "px")
         //resize background colour dynamically
         window.addEventListener('resize', function (event) {
             // do stuff here
             byID("top").setAttribute("style", "height:" + getH() + "px")
             byID("imgScroll").setAttribute("style", "overflow-x: scroll;height: 30vh;width: " + document.getElementById('toolBox').getBoundingClientRect().width * 0.8 + "px")
-        });
+            byID("toolscrollbox").setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
+        });     
 
 
         function showOtherOptions(id, name) {
