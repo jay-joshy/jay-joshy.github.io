@@ -162,16 +162,21 @@
 
         }
 
-        .scrollbox::-webkit-scrollbar {
-            display: none;
-        }
+        /* custom scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+}
 
-        .scrollbox {
-            -ms-overflow-style: none;
-            /* IE and Edge */
-            scrollbar-width: none;
-            /* Firefox */
-        }
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee150;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
 
 
         .whitebox p {
@@ -564,7 +569,7 @@
                         <!-- For HPI questions, make in dropdown -->
                         <div style="padding-bottom: 2vh;" id="linksbox">
                             <div style="text-align: center;">
-                                <button class="btn btn-primary feature-subtitle dropdown " style="padding-bottom: 0.5rem; text-align: center;background-color: black; border-color: white;"
+                                <button class="btn btn-primary feature-subtitle dropdown " style="padding-bottom: 0.5rem;margin-bottom: 1rem; text-align: center;background-color: black; border-color: white;"
                                     data-bs-toggle="collapse" data-bs-target="#links" id="collapseText">
                                     TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: <i class="bi bi-plus-lg" style="color: white;"
                                         id="refIcon"></i>
@@ -1241,6 +1246,11 @@
                 byID(iconID).className = "bi bi-dash-lg";
                 collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ","SCROLL DOWN TO SEE QUESTIONS: ")
             })
+            myCollapsible.addEventListener('shown.bs.collapse', function () {
+                document.getElementById("linksbox").scrollIntoView({behavior: 'smooth'});  
+            })
+
+            
         }
         collapseIcon("links", "refIcon")
         
@@ -1249,7 +1259,7 @@
         }
 
         byID("top").setAttribute("style", "height:" + getH() + "px")
-        byID('toolscrollbox').setAttribute("style", "max-height:" + document.getElementById('toolBox').getBoundingClientRect().height +"px;overflow:auto;")
+        byID('toolscrollbox').setAttribute("style", "max-height:" + (document.getElementById('toolBox').getBoundingClientRect().height -20) +"px;overflow:auto;")
         //byID('toolscrollbox').setAttribute("style", "max-height:800px;overflow:auto;")
 
         //resize background colour dynamically
