@@ -548,7 +548,7 @@
 
                             </tr>
 
-                            <tr class="questionTableRow">
+                            <tr class="questionTableRow" id="jumpto">
                                 <td style="padding-top: 1em;" colspan="2">Do you have any of the following?</td>
 
 
@@ -654,7 +654,7 @@
                                             </select>
                                         </td>
                                     </tr>
-                                    <tr class="questionTableRow" id="jumpto">
+                                    <tr class="questionTableRow" >
                                         <td><label for="whenreact">More specifically, when was your last
                                                 reaction?</label>
                                         </td>
@@ -1293,7 +1293,7 @@
                 collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE PDF Referral, ANSWER BELOW QUESTIONS: ", "SCROLL DOWN TO SEE QUESTIONS: ")                
             })
             myCollapsible.addEventListener('shown.bs.collapse', function () {
-                document.getElementById("collapseText").scrollIntoView({behavior: 'smooth'});                
+                document.getElementById("jumpto").scrollIntoView({behavior: 'smooth'});                
             })
             
         }
