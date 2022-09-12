@@ -530,7 +530,7 @@
                                 
                             </tr>
                             
-                            <tr class="questionTableRow">
+                            <tr class="questionTableRow" id="jumpto">
                                 <td style="padding-top: 1em;" colspan="2">Do they have any of the following conditions that may confound oral challenge interpretation?</td>
                                 
                                                              
@@ -1247,7 +1247,7 @@
                 collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ","SCROLL DOWN TO SEE QUESTIONS: ")
             })
             myCollapsible.addEventListener('shown.bs.collapse', function () {
-                document.getElementById("linksbox").scrollIntoView({behavior: 'smooth'});  
+                document.getElementById("jumpto").scrollIntoView({behavior: 'smooth'});  
             })
 
             
