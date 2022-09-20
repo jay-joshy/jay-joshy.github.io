@@ -24,12 +24,18 @@
             position: fixed;
     bottom: 0;
     width: 100%;
-    max-height: 30vh;
+    height: 35vh;
+        }
+
+        p {
+            color: white;
+            /* text-align: justify; */
+            /* text-justify: inter-word; */
         }
         
         /* MAKE BACKGROUND IMG */
         .header {
-            background-color: rgba(112, 190, 246, 0.603);
+            background-color: rgb(17, 87, 138);
 
 
             background-size: cover;
@@ -39,7 +45,7 @@
             background-attachment: fixed;
 
             /* adjust height of widget */
-            /* height: 1300px; */
+            height: 60vh;
         }
 
         .questionTable {
@@ -216,15 +222,7 @@
 
 
         /* makes the background image darker */
-        .overlay {
-            position: absolute;
-            min-height: 100%;
-            min-width: 100%;
-            left: 0;
-            top: 0;
-            background: rgba(0, 0, 0, 0.5);
-            /* 0.6 is orig */
-        }
+       
 
 
         .features {
@@ -241,7 +239,7 @@
             color: rgb(255, 255, 255);
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
             text-transform: uppercase;
         }
 
@@ -262,12 +260,7 @@
             font-style: italic;
         }
 
-        p {
-            color: white;
-            /* text-align: justify; */
-            /* text-justify: inter-word; */
-        }
-
+        
         .dropdown {
             cursor: pointer;
             margin-bottom: 0px;
@@ -276,7 +269,7 @@
         /* box for def clin box  */
         .cleandarkBox {
             /* From https://css.glass */
-            background: rgba(0, 0, 0, 0.36);
+            background: rgba(4, 6, 44, 0.863);
             border-radius: 1px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(12px);
@@ -288,6 +281,7 @@
             padding-bottom: 1px;
             margin-top: 0px;
             margin-bottom: 0px;
+            margin: 0;
         }
 
 
@@ -297,7 +291,7 @@
             margin-right: 0px;
             margin-left: 0px;
             margin-top: 0px;
-            margin-bottom: 1px;
+            margin-bottom: 0px;
             border-radius: 10px;
             padding: 20px;
             padding-top: 1px;
@@ -323,7 +317,7 @@
             margin-right: 0px;
             margin-left: 0px;
             margin-top: 0px;
-            margin-bottom: 1px;
+            margin-bottom: 0px;
             padding: 20px;
             padding-top: 5px;
             padding-bottom: 1px;
@@ -438,12 +432,12 @@
         <div class="overlay"></div>
         <!-- Need features in order for the text to properly show as white -->
         <div class="container-fluid features">
-            <div class="container-fluid" style="padding-bottom: 5vh;">
+            <div class="container-fluid" style="padding-bottom: 5vh; margin: 0px;">
                 <!-- darkbox to contain penfast tool -->
 
-                <div class="cleandarkBox fixed" style="padding-bottom: 2vh;" id="toolBox">
+                <div class="cleandarkBox fixed" style="padding-bottom: 2vh; margin-bottom: 0px;margin-right: 0em;" id="toolBox">
                     <!-- scrollbox height should be at least to the expand thing -->
-                    <div class="scrollbox" style="overflow:auto;" id="toolscrollbox">
+                    <div class="scrollbox" style="overflow:auto;margin-right: 0em;" id="toolscrollbox">
                         <table class="questionTable" style="width:100%;">
                             <tr>
                                 <td colspan="2">
@@ -548,7 +542,7 @@
 
                             </tr>
 
-                            <tr class="questionTableRow" id="jumpto">
+                            <tr class="questionTableRow" >
                                 <td style="padding-top: 1em;" colspan="2">Do you have any of the following?</td>
 
 
@@ -576,7 +570,7 @@
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="checkmarkcontainer"
-                                            style="display: inline-block; padding-right: 1em;"> Any "Mast cell"
+                                            style="display: inline-block; padding-right: 1em;" id="jumpto"> Any "Mast cell"
                                             disorders
                                             <input type="checkbox" name="mastocyt">
                                             <span class="checkmark"></span>
@@ -746,7 +740,7 @@
                                                         <td style="text-align: center;width: 25%;"><img src="dress.jpg"
                                                                 alt="" class="tableImg" style="height: 20vh;">
                                                             <label class="checkmarkcontainer" style="margin-top:1em">
-                                                                A
+                                                                
                                                                 <input type="checkbox" name="mobiliform"
                                                                     value="mobiliform">
                                                                 <span class="checkmark" style="margin-left:6em;"></span>
@@ -756,7 +750,7 @@
                                                                 src="urticaria.jpg" alt="" class="tableImg"
                                                                 style="height: 20vh;">
                                                             <label class="checkmarkcontainer" style="margin-top:1em">
-                                                                B
+                                                                
                                                                 <input type="checkbox" name="urticarial"
                                                                     value="urticarial">
                                                                 <span class="checkmark" style="margin-left:6em;"></span>
@@ -764,7 +758,7 @@
                                                         </td>
                                                         <td style="text-align: center;width: 25%;"><img src="sjs.jpg"
                                                                 alt="" class="tableImg" style="height: 20vh;">
-                                                            <label class="checkmarkcontainer" style="margin-top:1em"> C
+                                                            <label class="checkmarkcontainer" style="margin-top:1em"> 
                                                                 <input type="checkbox" name="SJS"
                                                                     value="desquaminating">
                                                                 <span class="checkmark" style="margin-left:6em;"></span>
@@ -773,7 +767,7 @@
                                                         <td style="text-align: center;width: 25%;"><img
                                                                 src="otherrash.png" alt="" class="tableImg" style="height: 20vh;">
                                                             <label class=" checkmarkcontainer" style="margin-top:1em">
-                                                            Other
+                                                            
                                                             <input type="checkbox" name="otherrash"
                                                                 value="another morphology">
                                                             <span class="checkmark" style="margin-left:6em;"></span>
@@ -849,8 +843,8 @@
 
                 </div>
                 <!-- decision box with buttons -->
-                <div class="whitebox footer scrollbox" style="overflow:auto" id="decisionBox">
-                    <h3 class="feature-subtitle">CALCULATED RISK:</h3>
+                <div class="whitebox footer scrollbox" style="overflow:auto;margin-top: 0px;" id="decisionBox">
+                    <h3 class="feature-subtitle" style="margin-top: 0;">CALCULATED RISK:</h3>
                     <p id="scorereport"></p>
                     <h3 class="feature-subtitle">Next Steps:</h3>
                     <p id="decision">
@@ -864,7 +858,7 @@
                         <button type="button" class="indicButton btn btn-primary"
                             style="background-color: red;border: red;" disabled></button>
                         <p style="display: inline;" id="indicText"><b>-- PDF button not ready. Please enter in
-                                penicillin name.
+                                penicillin name above.
                                 --</b></p>
                         <button type="button" class="indicButton btn btn-primary"
                             style="background-color: red;border: red;" disabled></button>
@@ -929,7 +923,7 @@
 
 
             } else {
-                byID("indicText").innerHTML = "-- PDF button not ready. Requires penicillin name --"
+                byID("indicText").innerHTML = "-- PDF button not ready. Requires penicillin name above --"
                 var indicBut = document.getElementsByClassName("indicButton")
                 indicBut[0].setAttribute("style", "background-color: red;border: red;")
                 indicBut[1].setAttribute("style", "background-color: red;border: red;")
@@ -1207,7 +1201,7 @@
                 }
                 else if (score == 0 || score == 1 || score == 2) {
                     if (badOutCon || confound) {
-                        decisionBox.innerHTML = "You are likely safe for oral challenge! However, you should discuss the risks and benefits with your family doctor given your medical/medication history, and they may decide to refer to an Allergist."
+                        decisionBox.innerHTML = "You are likely safe for oral challenge. However, you should discuss the risks and benefits with your family doctor given your medical/medication history, and they may decide to refer to an Allergist."
 
                         if (badOutCon) {
                             decisionBox.innerHTML = decisionBox.innerHTML + " Namely, your medical history of " + badOutConPosit + " does create higher risk with an oral challenge."
@@ -1303,14 +1297,14 @@
             return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 500 : document.getElementById('toolBox').getBoundingClientRect().height + 500
         }
 
-        byID("top").setAttribute("style", "height:" + getH() + "px")
+        //byID("top").setAttribute("style", "height:" + getH() + "px")
         byID('toolscrollbox').setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
         
         byID("imgScroll").setAttribute("style", "overflow-x: scroll;height: 30vh;width: " + document.getElementById('toolBox').getBoundingClientRect().width * 0.85 + "px")
         //resize background colour dynamically
         window.addEventListener('resize', function (event) {
             // do stuff here
-            byID("top").setAttribute("style", "height:" + getH() + "px")
+            //byID("top").setAttribute("style", "height:" + getH() + "px")
             byID("imgScroll").setAttribute("style", "overflow-x: scroll;height: 30vh;width: " + document.getElementById('toolBox').getBoundingClientRect().width * 0.8 + "px")
             byID("toolscrollbox").setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
         });     
