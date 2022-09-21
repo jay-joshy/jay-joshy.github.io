@@ -472,7 +472,7 @@
                                     </label>
                                 </td>
                             </tr>
-                            <tr class="questionTableRowBottom">
+                            <tr class="questionTableRow">
                                 <td><span style="font-weight: bold;">T</span> - Treatment required for reaction</td>
                                 <td>
                                     <label class="qswitch">
@@ -481,6 +481,23 @@
                                     </label>
                                 </td>
                             </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="whitebox" style="padding-top: 1em;">
+                                        <h3 class="feature-subtitle" style="margin-top: 0;">CALCULATED RISK:</h3>
+                    <p id="scorereport"></p>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h3 class="feature-subtitle" style="text-align: center">
+                                        To determine if they are appropriate for a challenge, answer the following:
+                                    </h3>
+                                </td>
+                            </tr>
+
                             <tr class="questionTableRow">
                                 <td>Are they pregnant?</td>
                                 <td>
@@ -580,8 +597,15 @@
                                     <tr class="questionTableRow">
                                         <td><label for="penicillin">What penicillin was it?</label></td>
                                         <td style="width:120px;text-align: right;">
-                                            <input type="input-group-text" id="penicillin" name="penicillin"
-                                                placeholder="Type drug name ... " class="drop">
+                                            
+                                            <select name="penicillin" id="penicillin" class="form-select drop">
+                                                <option value="" selected disabled hidden>Select Here</option>
+                                                <option value="penicillin G / VK">Penicillin G or VK</option>                                                
+                                                <option value="amoxicillin">Amoxicillin</option>
+                                                <option value="ampicillin">Ampicillin</option>
+                                                <option value="piperacillin">Piperacillin</option>
+                                                <option value="an 'other' penicillin">Other penicillin</option>
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr class="questionTableRow">
@@ -692,11 +716,11 @@
                                         <td colspan="2" style="padding-top:1em">
                                             <p style="text-align: center;">What did the rash look like?</p>
                                             <div style="text-align: center;">
-                                                <label class="checkmarkcontainer"
+                                                <!-- <label class="checkmarkcontainer"
                                                     style="display: inline-block; padding-right: 1em;"> Mobiliform
                                                     <input type="checkbox" name="mobiliform" value="mobiliform">
                                                     <span class="checkmark"></span>
-                                                </label>
+                                                </label> -->
                                                 <label class="checkmarkcontainer"
                                                     style="display: inline-block; padding-right: 1em"> Urticarial
                                                     <input type="checkbox" name="urticarial" value="urticarial">
@@ -775,16 +799,15 @@
                 </div>
                 <!-- decision box with buttons -->
                 <div class="whitebox">
-                    <h3 class="feature-subtitle">PEN-FAST SCORE:</h3>
-                    <p id="scorereport"></p>
-                    <h3 class="feature-subtitle">Next Steps:</h3>
+                    
+                    <h3 class="feature-subtitle">Are they safe for a challenge?</h3>
                     <p id="decision">
                         Patient is safe for oral challenge without referral to allergist.                   
                         If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page.
                     </p>
                     <div style="text-align: center;">
                     <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
-                     <p style="display: inline;" id="indicText"><b>-- HPI and PDF buttons not ready. Requires penicillin name --</b></p> 
+                     <p style="display: inline;" id="indicText"><b>-- HPI and PDF buttons not ready. Requires penicillin name above --</b></p> 
                     <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
                     </div>
                     <div class="d-grid gap-2">
@@ -830,7 +853,7 @@
                             <li id="0p">0 points – Negligible risk of positive penicillin allergy test </li>
                             <li id="1-2p">1-2 points – Low risk of positive penicillin allergy test 5%</li>
                             <li id="3p">3 points – Moderate risk of positive penicillin allergy test 20%</li>
-                            <li id="4p">4 points – High risk of positive penicillin allergy test 50%</li>
+                            <li id="4p">4-5 points – High risk of positive penicillin allergy test 50%</li>
                         </ul>
                         <h3 class="feature-subtitle" style="padding-bottom: 0.5rem;">
                             References
@@ -890,7 +913,7 @@
                 
                 
             }else{
-                byID("indicText").innerHTML = "-- HPI and PDF buttons not ready. Requires penicillin name --"
+                byID("indicText").innerHTML = "-- HPI and PDF buttons not ready. Requires penicillin name above--"
                 var indicBut = document.getElementsByClassName("indicButton")
                 indicBut[0].setAttribute("style","background-color: red;border: red;")
                 indicBut[1].setAttribute("style","background-color: red;border: red;")
@@ -922,11 +945,15 @@
             var q4 = byID('q4').checked
             var score = 0
             var penfast = [q1, q2, q3, q4]
-            for (x in penfast) {
-                if (penfast[x]) {
-                    score = score + 1
+
+            // need score
+            score = q1? score + 2 : score 
+            score = q2? score + 2 : score                    
+                if(!q2){
+                    score = q3? score + 2 : score 
                 }
-            }
+                score = q4? score + 1 : score
+
             var pregnant = byID('q5').checked ? '+is pregnant' : "pregnancy" 
             var betaBlock = byID("q6").checked ? '+has current beta-blocker use' : "current beta-blocker use" 
             var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF / CAD / arrhythmogenic / valvular)' : "significant cardiac disease (CHF / CAD / arrhythmogenic / valvular)"  
@@ -974,7 +1001,7 @@
             
 
             var rash = byN("rash")[0].checked ? "rash" : ""
-            var morbili = byN("mobiliform")[0].checked ? "mobiliform" : "" 
+            //var morbili = byN("mobiliform")[0].checked ? "mobiliform" : "" 
             var urticarial = byN("urticarial")[0].checked ? "urticarial" : "" 
             var SJS = byN("SJS")[0].checked ? "desquaminating" : "" 
             var otherRash = byN("otherrash")[0].checked ? "other morphology" : "" 
@@ -998,7 +1025,8 @@
                     negatives.push(symptomList[x])
                 }
             }
-            var rashtype = [morbili, urticarial, SJS, otherRash]
+            //var rashtype = [morbili, urticarial, SJS, otherRash]
+            var rashtype = [urticarial, SJS, otherRash]
             var posRashTypes = []
             for (i in rashtype) {
                 if (rashtype[i] != "") {
@@ -1059,7 +1087,7 @@
                 " Treatment was " + userInput[10] + ". They have " + userInput[7] + " before their reaction. They " + userInput[11] + " had penicillins since this reaction.\n\n" +
                 "PEN-FAST score: " + userInput[0] + " => " + boldScore(userInput[0]) + "\n\n" +
                 "Impression and Plan:\n" +
-                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false)
+                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)','(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
             text = doc.splitTextToSize(text, 170)
             doc.text(text, 20, 70)
             doc.text("Comments below:", 20, 240)
@@ -1091,7 +1119,7 @@
                 " Treatment was " + userInput[10] + ". They have " + userInput[7] + " before their reaction. They " + userInput[11] + " had penicillins since this reaction.\n\n" +
                 "PEN-FAST score: " + userInput[0] + " => " + boldScore(userInput[0]) + "\n\n" +
                 "Impression and Plan:\n" +
-                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false)
+                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)','(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
 
 
             navigator.clipboard.writeText(text);
@@ -1125,7 +1153,7 @@
                 med.setAttribute("style", "font-weight: bold;");
                 description = "Moderate risk (20%) " + t
             }
-            else if (score == 4) {
+            else if (score == 4||score == 5) {
                 resetBold(low, med, high)
                 high.setAttribute("style", "font-weight: bold;");
                 description = "High risk (50%) " + t
@@ -1149,7 +1177,7 @@
             var decisionBox = byID('decision');
             if (preg) {
                 decisionBox.innerHTML = "Overall recommend a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. Typically preceding challenge we would undertake skin testing and subsequently a 2 step oral challenge."
-                if (score == 3 || score == 4) {
+                if (score == 3 || score == 4 || score==5) {
                     decisionBox.innerHTML = decisionBox.innerHTML + " In addition, they are at moderate or high risk of having a true allergy."
                 }
                 if (badOutCon) {
@@ -1177,6 +1205,7 @@
                     return decisionBox.innerHTML
                 }
             }
+            //if score 3 4 5
             else {
                 decisionBox.innerHTML = "Continue to avoid the penicillin for now given high risk of true allergy. Referral to allergy specialist may be able to better clarify their true risk with skin testing and additional measures"
                 return decisionBox.innerHTML
@@ -1188,10 +1217,10 @@
         }
         function tallyScore() {
             document.addEventListener('DOMContentLoaded', function () {
-                var q1 = byID("q1")
-                var q2 = byID("q2")
-                var q3 = byID("q3")
-                var q4 = byID("q4")
+                var q1 = byID("q1") // time
+                var q2 = byID("q2") // angio/angio
+                var q3 = byID("q3") // severe cut
+                var q4 = byID("q4") // treatment
                 var q5 = byID("q5")
                 var q6 = byID("q6")
                 var q7 = byID("q7")
@@ -1210,14 +1239,56 @@
                 var score = 0;
                 var preg = false;
                 scoredisplay.innerHTML = score + " points: Very low risk (<1%) of positive penicillin allergy test"
-                var qQuestions = [q1, q2, q3, q4]
-                qQuestions.forEach(element => {
-                    element.addEventListener('change', function () {
-                        score = scoreEdit(element, score)
+
+                //penfast questions
+
+                // timing, 2 points
+                q1.addEventListener('change', function () {
+                        //edit score
+                        score = q1.checked? score + 2 : score - 2 
                         decisionText(score, preg)
                         scoredisplay.innerHTML = score + " points: " + boldScore(score)
                     });
+                
+                // ana/angio OR severe cut = 2 points
+                q2.addEventListener('change', function () {
+                    // if q3 already checked then don't add new score or subtract
+                    if(!q3.checked){
+                        score = q2.checked? score + 2 : score - 2 
+                    }
+                     
+                    decisionText(score, preg)
+                    scoredisplay.innerHTML = score + " points: " + boldScore(score)
                 });
+                q3.addEventListener('change', function () {
+                    //edit score
+                    // if q3 already checked then don't add new score or subtract
+                    if(!q2.checked){
+                        score = q3.checked? score + 2 : score - 2 
+                    }
+                    decisionText(score, preg)
+                    scoredisplay.innerHTML = score + " points: " + boldScore(score)
+                });            
+                
+                // treatment
+                q4.addEventListener('change', function () {
+                        //edit score
+                        score = q4.checked? score + 1 : score - 1 
+                        decisionText(score, preg)
+                        scoredisplay.innerHTML = score + " points: " + boldScore(score)
+                    });
+
+                // var qQuestions = [q1, q2, q3, q4]
+                // qQuestions.forEach(element => {
+                //     element.addEventListener('change', function () {
+                //         score = scoreEdit(element, score)
+                //         decisionText(score, preg)
+                //         scoredisplay.innerHTML = score + " points: " + boldScore(score)
+                //     });
+                // });
+
+
+
                 q5.addEventListener('change', function () {
                     preg = q5.checked ? true : false
                     decisionText(score, preg)
