@@ -35,7 +35,7 @@
         
         /* MAKE BACKGROUND IMG */
         .header {
-            background-color: rgb(17, 87, 138);
+            background-color: rgba(112, 190, 246, 0.603);
 
 
             background-size: cover;
@@ -45,8 +45,19 @@
             background-attachment: fixed;
 
             /* adjust height of widget */
-            height: 60vh;
+            height: 63vh;
         }
+        /* makes the background image darker */
+        .overlay {
+            position: absolute;
+            min-height: 100%;
+            min-width: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* 0.6 is orig */
+        }
+
 
         .questionTable {
             border: none;
@@ -269,7 +280,8 @@
         /* box for def clin box  */
         .cleandarkBox {
             /* From https://css.glass */
-            background: rgba(4, 6, 44, 0.863);
+             /* From https://css.glass */
+             background: rgba(0, 0, 0, 0.36);
             border-radius: 1px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(12px);
@@ -478,7 +490,7 @@
                                     </label>
                                 </td>
                             </tr>
-                            <tr class="questionTableRowBottom">
+                            <tr class="questionTableRow">
                                 <td>When you had the reaction, was any treatment given besides stopping the penicillin?
                                 </td>
                                 <td>
@@ -486,6 +498,22 @@
                                         <input type="checkbox" unchecked id="q4">
                                         <span class="qslider round"></span>
                                     </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="whitebox" style="padding-top: 1em;">
+                                        <h3 class="feature-subtitle" style="margin-top: 0;">CALCULATED RISK:</h3>
+                    <p id="scorereport"></p>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h3 class="feature-subtitle" style="text-align: center">
+                                        To more accurately determine if you are appropriate for a challenge, answer the following:
+                                    </h3>
                                 </td>
                             </tr>
                             <tr class="questionTableRow">
@@ -604,8 +632,14 @@
                                     <tr class="questionTableRow">
                                         <td><label for="penicillin">What penicillin caused the reaction?</label></td>
                                         <td style="width:120px;text-align: right;">
-                                            <input type="input-group-text" id="penicillin" name="penicillin"
-                                                placeholder="Type drug name ... " class="drop">
+                                            <select name="penicillin" id="penicillin" class="form-select drop">
+                                                <option value="" selected disabled hidden>Select Here</option>
+                                                <option value="penicillin G / VK">Penicillin G or VK</option>                                                
+                                                <option value="amoxicillin">Amoxicillin</option>
+                                                <option value="ampicillin">Ampicillin</option>
+                                                <option value="piperacillin">Piperacillin</option>
+                                                <option value="an 'other' penicillin">Other penicillin</option>
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr class="questionTableRow">
@@ -737,7 +771,7 @@
 
                                                     <tr style="text-align: center;">
 
-                                                        <td style="text-align: center;width: 25%;"><img src="dress.jpg"
+                                                        <!-- <td style="text-align: center;width: 25%;"><img src="dress.jpg"
                                                                 alt="" class="tableImg" style="height: 20vh;">
                                                             <label class="checkmarkcontainer" style="margin-top:1em">
                                                                 
@@ -745,8 +779,8 @@
                                                                     value="mobiliform">
                                                                 <span class="checkmark" style="margin-left:6em;"></span>
                                                             </label>
-                                                        </td>
-                                                        <td style="text-align: center;width: 25%;"><img
+                                                        </td> -->
+                                                        <td style="text-align: center;width: 33%;"><img
                                                                 src="urticaria.jpg" alt="" class="tableImg"
                                                                 style="height: 20vh;">
                                                             <label class="checkmarkcontainer" style="margin-top:1em">
@@ -756,7 +790,7 @@
                                                                 <span class="checkmark" style="margin-left:6em;"></span>
                                                             </label>
                                                         </td>
-                                                        <td style="text-align: center;width: 25%;"><img src="sjs.jpg"
+                                                        <td style="text-align: center;width: 33%;"><img src="sjs.jpg"
                                                                 alt="" class="tableImg" style="height: 20vh;">
                                                             <label class="checkmarkcontainer" style="margin-top:1em"> 
                                                                 <input type="checkbox" name="SJS"
@@ -764,7 +798,7 @@
                                                                 <span class="checkmark" style="margin-left:6em;"></span>
                                                             </label>
                                                         </td>
-                                                        <td style="text-align: center;width: 25%;"><img
+                                                        <td style="text-align: center;width: 33%;"><img
                                                                 src="otherrash.png" alt="" class="tableImg" style="height: 20vh;">
                                                             <label class=" checkmarkcontainer" style="margin-top:1em">
                                                             
@@ -844,9 +878,8 @@
                 </div>
                 <!-- decision box with buttons -->
                 <div class="whitebox footer scrollbox" style="overflow:auto;margin-top: 0px;" id="decisionBox">
-                    <h3 class="feature-subtitle" style="margin-top: 0;">CALCULATED RISK:</h3>
-                    <p id="scorereport"></p>
-                    <h3 class="feature-subtitle">Next Steps:</h3>
+                    
+                    <h3 class="feature-subtitle">Are you appropriate for a challenge?</h3>
                     <p id="decision">
                         You are likely safe for oral challenge without referral to allergist.
                         If an oral challenge is considered, it must be done in a medically monitored setting with
@@ -952,11 +985,17 @@
             var q4 = byID('q4').checked
             var score = 0
             var penfast = [q1, q2, q3, q4]
-            for (x in penfast) {
-                if (penfast[x]) {
-                    score = score + 1
+            
+            // need score
+            score = q1? score + 2 : score 
+            score = q2? score + 2 : score                    
+                if(!q2){
+                    score = q3? score + 2 : score 
                 }
-            }
+                score = q4? score + 1 : score
+
+
+
             var pregnant = byID('q5').checked ? '+is pregnant' : "pregnancy"
             var betaBlock = byID("q6").checked ? '+has current beta-blocker use' : "current beta-blocker use"
             var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF / CAD / arrhythmogenic / valvular)' : "significant cardiac disease (CHF / CAD / arrhythmogenic / valvular)"
@@ -1004,7 +1043,7 @@
 
 
             var rash = byN("rash")[0].checked ? "rash" : ""
-            var morbili = byN("mobiliform")[0].checked ? "mobiliform" : ""
+            //var morbili = byN("mobiliform")[0].checked ? "mobiliform" : ""
             var urticarial = byN("urticarial")[0].checked ? "urticarial" : ""
             var SJS = byN("SJS")[0].checked ? "desquaminating" : ""
             var otherRash = byN("otherrash")[0].checked ? "other morphology" : ""
@@ -1028,7 +1067,8 @@
                     negatives.push(symptomList[x])
                 }
             }
-            var rashtype = [morbili, urticarial, SJS, otherRash]
+            //var rashtype = [morbili, urticarial, SJS, otherRash]
+            var rashtype = [urticarial, SJS, otherRash]
             var posRashTypes = []
             for (i in rashtype) {
                 if (rashtype[i] != "") {
@@ -1089,7 +1129,7 @@
                 " Treatment was " + userInput[10] + ". They have " + userInput[7] + " before their reaction. They " + userInput[11] + " had penicillins since this reaction.\n\n" +
                 "PEN-FAST score: " + userInput[0] + " => " + boldScore(userInput[0]) + "\n\n" +
                 "Impression and Plan:\n" +
-                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false)
+                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)','(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
             text = doc.splitTextToSize(text, 170)
             doc.text(text, 20, 70)
             doc.text("Comments below:", 20, 240)
@@ -1124,7 +1164,7 @@
 
                 description = "Moderate risk (20%) " + t
             }
-            else if (score == 4) {
+            else if (score == 4 || score ==5) {
 
                 description = "High risk (50%) " + t
             }
@@ -1150,7 +1190,7 @@
             if (jargon) {
                 if (preg) {
                     decisionText = "Overall recommend a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. Typically preceding challenge we would undertake skin testing and subsequently a 2 step oral challenge."
-                    if (score == 3 || score == 4) {
+                    if (score == 3 || score == 4 || score ==5) {
                         decisionText = decisionText + " In addition, they are at moderate or high risk of having a true allergy."
                     }
                     if (badOutCon) {
@@ -1188,7 +1228,7 @@
 
                 if (preg) {
                     decisionBox.innerHTML = "Overall recommend a seeing your Family Physician to obtain a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. An allergist would discuss a specialized testing protocol."
-                    if (score == 3 || score == 4) {
+                    if (score == 3 || score == 4 || score ==5) {
                         decisionBox.innerHTML = decisionBox.innerHTML + " In addition, you are at moderate or high risk of having a true allergy."
                     }
                     if (badOutCon) {
@@ -1250,14 +1290,54 @@
                 var score = 0;
                 var preg = false;
                 scoredisplay.innerHTML = "Very low risk (<1%) of positive penicillin allergy test"
-                var qQuestions = [q1, q2, q3, q4]
-                qQuestions.forEach(element => {
-                    element.addEventListener('change', function () {
-                        score = scoreEdit(element, score)
-                        decisionText(score, preg, false)
+
+                
+                // timing, 2 points
+                q1.addEventListener('change', function () {
+                        //edit score
+                        score = q1.checked? score + 2 : score - 2 
+                        decisionText(score, preg,false)
                         scoredisplay.innerHTML = boldScore(score)
                     });
+                
+                // ana/angio OR severe cut = 2 points
+                q2.addEventListener('change', function () {
+                    // if q3 already checked then don't add new score or subtract
+                    if(!q3.checked){
+                        score = q2.checked? score + 2 : score - 2 
+                    }
+                     
+                    decisionText(score, preg,false)
+                    scoredisplay.innerHTML = boldScore(score)
                 });
+                q3.addEventListener('change', function () {
+                    //edit score
+                    // if q3 already checked then don't add new score or subtract
+                    if(!q2.checked){
+                        score = q3.checked? score + 2 : score - 2 
+                    }
+                    decisionText(score, preg,false)
+                    scoredisplay.innerHTML = boldScore(score)
+                });            
+                
+                // treatment
+                q4.addEventListener('change', function () {
+                        //edit score
+                        score = q4.checked? score + 1 : score - 1 
+                        decisionText(score, preg,false)
+                        scoredisplay.innerHTML =  boldScore(score)
+                    });
+
+                // var qQuestions = [q1, q2, q3, q4]
+                // qQuestions.forEach(element => {
+                //     element.addEventListener('change', function () {
+                //         score = scoreEdit(element, score)
+                //         decisionText(score, preg, false)
+                //         scoredisplay.innerHTML = boldScore(score)
+                //     });
+                // });
+
+
                 q5.addEventListener('change', function () {
                     preg = q5.checked ? true : false
                     decisionText(score, preg, false)
