@@ -24,7 +24,7 @@
             position: fixed;
     bottom: 0;
     width: 100%;
-    height: 35vh;
+    height: 30vh;
         }
 
         p {
@@ -45,7 +45,7 @@
             background-attachment: fixed;
 
             /* adjust height of widget */
-            height: 63vh;
+            height: 70vh;
         }
         /* makes the background image darker */
         .overlay {
@@ -455,8 +455,7 @@
                                 <td colspan="2">
                                     <h3 class="feature-subtitle" style="text-align: center;padding-bottom: 1rem;">
                                         This tool is ONLY valid for those with a suspected penicillin allergy <br>(ie.
-                                        to penicillin,
-                                        amoxicillin, ampicillin)
+                                        to penicillin, amoxicillin, ampicillin)
                                     </h3>
                                 </td>
                             </tr>
@@ -877,9 +876,9 @@
 
                 </div>
                 <!-- decision box with buttons -->
-                <div class="whitebox footer scrollbox" style="overflow:auto;margin-top: 0px;" id="decisionBox">
+                <div class="whitebox footer scrollbox" style="overflow:auto;margin-top: 0px;padding-top: 0;" id="decisionBox">
                     
-                    <h3 class="feature-subtitle">Are you appropriate for a challenge?</h3>
+                    <h3 class="feature-subtitle" style="padding-top:0px;">Are you appropriate for a challenge?</h3>
                     <p id="decision">
                         You are likely safe for oral challenge without referral to allergist.
                         If an oral challenge is considered, it must be done in a medically monitored setting with
@@ -1083,7 +1082,8 @@
             }
             positives = listGrammar(positives.join(", "))
             negatives = listGrammar(negatives.join(", "), false)
-            sympDesc = positives + ". There was no history of " + negatives + "."
+            //sympDesc = positives + ". There was no history of " + negatives + "."
+            sympDesc = negatives !=""? positives + ". There was no history of " + negatives + "." : positives + "."
 
 
             var penicillin = byID("penicillin").value
