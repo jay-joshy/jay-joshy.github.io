@@ -1041,7 +1041,9 @@
             }
             positives = listGrammar(positives.join(", "))
             negatives = listGrammar(negatives.join(", "),false)
-            sympDesc = positives + ". There was no history of " + negatives + "."
+
+            // if negatives has items, then do stuff. otherwise eh
+            sympDesc = negatives !=""? positives + ". There was no history of " + negatives + "." : positives + "."
 
 
             var penicillin = byID("penicillin").value 
@@ -1071,7 +1073,19 @@
             doc.setFontSize(22)
             doc.text("Penicillin Allergy Challenge Referral", 20, 20);
             doc.setFontSize(12)
+            doc.setDrawColor(0, 0, 0)
             doc.line(20, 25, 190, 25) // horizontal line
+            
+            // doc.setDrawColor(255, 0, 0)
+            // // create box for patient information
+            // doc.line(20, 25, 190, 25)
+
+            // doc.line(120, 30, 120, 60) // vertical line
+            // doc.line(190, 30, 190, 60) // vertical line
+            // doc.line(120, 30, 190, 30) // xy xy
+            // doc.line(120, 60, 190, 60) // xy xy
+            
+
             doc.setFont(undefined, 'bold')
             doc.text("Name: ", 20, 40)
             doc.text("Age and sex: ", 20, 50)
@@ -1140,10 +1154,10 @@
             var description = "Very low risk (<1%) " + t
             if (score == 0) {
                 resetBold(low, med, high);
-                low.setAttribute("style", "font-weight: bold;");
+                //none.setAttribute("style", "font-weight: bold;");
                 description = "Very low risk (<1%) " + t
             }
-            if (score == 1 || score == 2) {
+            else if (score == 1 || score == 2) {
                 resetBold(low, med, high)
                 low.setAttribute("style", "font-weight: bold;");
                 description = "Low risk (5%) " + t
