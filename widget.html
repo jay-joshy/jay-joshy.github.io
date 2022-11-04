@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Links to bootstrap 5 and also stylesheet -->
     <!-- <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" /> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -12,30 +13,22 @@
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
-
-
     <!-- Font links -->
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    
     <!-- Actual style sheet -->
     <!-- <link rel="stylesheet" href="css/penfastWidgetCSS.css">  -->
+    
     <!-- cped style -->
     <style>
-        .container-fluid{
-            margin:0px;
-            padding:0px;
+        .container-fluid {
+            margin: 0px;
+            padding: 0px;
         }
-        
-        /* MAKE BACKGROUND IMG */
+
+        /* only one header exists. set bg color here and height if needed (finnicky) */
         .header {
             background-color: rgba(112, 190, 246, 0.603);
-            /* background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(203,640,284)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%234FE'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='644' height='536.7' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.06'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E"); */
-            /* SVGS */
-            /* https://www.svgbackgrounds.com/ */
-            /* https://bgjar.com/ */
-            /* https://app.haikei.app/ */
-            /* https://cssauthor.com/svg-pattern-generator/ */
-
             background-size: cover;
             background-position: center;
             position: relative;
@@ -46,24 +39,20 @@
             /* height: 1300px; */
         }
 
+        /* table is used in provider-input section */
         .questionTable {
             border: none;
             color: white;
-
         }
-
         .questionTableRow {
             height: 50px;
-
         }
-
         .questionTableRowBottom {
             height: 50px;
             border-bottom: 1px solid white;
         }
 
-
-        /* The switch - the box around the slider */
+        /* Box around switch */
         .qswitch {
             position: relative;
             display: inline-block;
@@ -144,11 +133,7 @@
         input:checked+.qslider:after {
             content: 'Yes';
         }
-
-
-        /* white box 
-
-/* BOX FOR DIAG TX */
+        
         .whitebox {
             background-color: rgba(255, 255, 255, 0.80);
             margin-right: 0px;
@@ -163,20 +148,20 @@
         }
 
         /* custom scrollbar */
-::-webkit-scrollbar {
-  width: 15px;
-}
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
 
-::-webkit-scrollbar-thumb {
-  background-color: #d6dee150;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
-}
+        ::-webkit-scrollbar-thumb {
+            background-color: #d6dee150;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
 
 
         .whitebox p {
@@ -431,15 +416,16 @@
         <div class="container-fluid features">
             <div class="container-fluid col-lg-7 col-md-7 col-sm-12 float-sm-end" style="padding-bottom: 5vh;">
                 <!-- darkbox to contain penfast tool -->
-                
                 <div class="cleandarkBox" style="padding-bottom: 2vh;" id="toolBox">
-                    <!-- scrollbox height should be at least to the expand thing -->
+                    <!-- scrollbox is a wrapper to allow a div to be scrollable -->
                     <div class="scrollbox" style="overflow:auto;" id="toolscrollbox">
+                        <!-- table contains questions -->
                         <table class="questionTable" style="width:100%;">
                             <tr>
                                 <td colspan="2">
                                     <h3 class="feature-subtitle" style="text-align: center;padding-bottom: 1rem;">
-                                        Only patients with a reported penicillin allergy are eligible <br>(ie. penicillin,
+                                        Only patients with a reported penicillin allergy are eligible <br>(ie.
+                                        penicillin,
                                         amoxicillin, ampicillin)
                                     </h3>
                                 </td>
@@ -473,7 +459,7 @@
                                 </td>
                             </tr>
                             <tr class="questionTableRow">
-                                <td><span style="font-weight: bold;">T</span> - Treatment required for reaction</td>
+                                <td><span style="font-weight: bold;">T</span> - Treatment recieved for reaction (or unsure)</td>
                                 <td>
                                     <label class="qswitch">
                                         <input type="checkbox" unchecked id="q4">
@@ -485,9 +471,9 @@
                                 <td colspan="2">
                                     <div class="whitebox" style="padding-top: 1em;">
                                         <h3 class="feature-subtitle" style="margin-top: 0;">CALCULATED RISK:</h3>
-                    <p id="scorereport"></p>
+                                        <p id="scorereport"></p>
                                     </div>
-                                    
+
                                 </td>
                             </tr>
                             <tr>
@@ -526,81 +512,93 @@
                                 </td>
                             </tr>
                             <tr class="questionTableRow">
-                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following respiratory diagnoses?</td>
-                                
+                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following respiratory
+                                    diagnoses?</td>
+
                             </tr>
                             <tr class="questionTableRow">
                                 <td colspan="2" style="text-align: left">
-                                    <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled asthma
+                                    <label class="checkmarkcontainer"
+                                        style="display: inline-block; padding-right: 1em;"> Uncontrolled asthma
                                         <input type="checkbox" name="unconasthma" value="uncontrolled asthma">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Severe COPD
+                                    <label class="checkmarkcontainer"
+                                        style="display: inline-block; padding-right: 1em;"> Severe COPD
                                         <input type="checkbox" name="sevCOPD" value="severe COPD">
                                         <span class="checkmark"></span>
-                                    </label>          
-                                    <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Interstitial lung disease
+                                    </label>
+                                    <label class="checkmarkcontainer"
+                                        style="display: inline-block; padding-right: 1em;"> Interstitial lung disease
                                         <input type="checkbox" name="ild">
                                         <span class="checkmark"></span>
-                                    </label>  
+                                    </label>
                                 </td>
-                                
+
                             </tr>
-                            
+
                             <tr class="questionTableRow" id="jumpto">
-                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following conditions that may confound oral challenge interpretation?</td>
-                                
-                                                             
+                                <td style="padding-top: 1em;" colspan="2">Do they have any of the following conditions
+                                    that may confound oral challenge interpretation?</td>
+
+
                                 </td>
                             </tr>
                             <tr class="questionTableRow">
                                 <td colspan="2">
                                     <div style="text-align: left;">
-                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled ezcema
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> Uncontrolled ezcema
                                             <input type="checkbox" name="unconezcema">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled allergic rhinitis
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> Uncontrolled allergic
+                                            rhinitis
                                             <input type="checkbox" name="unconallrhin">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Uncontrolled Urticaria
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> Uncontrolled Urticaria
                                             <input type="checkbox" name="chronurt">
                                             <span class="checkmark"></span>
-                                        </label>     
-                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> Mastocytosis
+                                        </label>
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> Mastocytosis
                                             <input type="checkbox" name="mastocyt">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="checkmarkcontainer"style="display: inline-block; padding-right: 1em;"> An acute infection
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> An acute infection
                                             <input type="checkbox" name="acuteinfect">
                                             <span class="checkmark"></span>
                                         </label>
-                                    </div>      
+                                    </div>
                                 </td>
-                                
+
                             </tr>
-                            
-                        </table>                   
+
+                        </table>
 
                         <!-- For HPI questions, make in dropdown -->
                         <div style="padding-bottom: 2vh;" id="linksbox">
                             <div style="text-align: center;">
-                                <button class="btn btn-primary feature-subtitle dropdown " style="padding-bottom: 0.5rem;margin-bottom: 1rem; text-align: center;background-color: black; border-color: white;"
+                                <button class="btn btn-primary feature-subtitle dropdown "
+                                    style="padding-bottom: 0.5rem;margin-bottom: 1rem; text-align: center;background-color: black; border-color: white;"
                                     data-bs-toggle="collapse" data-bs-target="#links" id="collapseText">
-                                    TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: <i class="bi bi-plus-lg" style="color: white;"
-                                        id="refIcon"></i>
-                                 </button>
+                                    TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: <i class="bi bi-plus-lg"
+                                        style="color: white;" id="refIcon"></i>
+                                </button>
                             </div>
                             <div id="links" class="collapse">
                                 <table class="questionTable" style="width:100%;">
                                     <tr class="questionTableRow">
                                         <td><label for="penicillin">What penicillin was it?</label></td>
                                         <td style="width:120px;text-align: right;">
-                                            
+
                                             <select name="penicillin" id="penicillin" class="form-select drop">
                                                 <option value="" selected disabled hidden>Select Here</option>
-                                                <option value="penicillin G / VK">Penicillin G or VK</option>                                                
+                                                <option value="penicillin G / VK">Penicillin G or VK</option>
                                                 <option value="amoxicillin">Amoxicillin</option>
                                                 <option value="ampicillin">Ampicillin</option>
                                                 <option value="piperacillin">Piperacillin</option>
@@ -609,7 +607,8 @@
                                         </td>
                                     </tr>
                                     <tr class="questionTableRow">
-                                        <td style="padding-top: 0em;"><label for="indication">What was the indication for
+                                        <td style="padding-top: 0em;"><label for="indication">What was the indication
+                                                for
                                                 the penicillin?</label></td>
                                         <td style="padding-top: 0em; text-align: right;">
                                             <select name="indication" id="indication" class="form-select drop">
@@ -623,10 +622,12 @@
                                         </td>
                                     </tr>
                                     <tr class="questionTableRow">
-                                        <td><label for="antibioticBefore">Have they used penicillins without issue prior to
+                                        <td><label for="antibioticBefore">Have they used penicillins without issue prior
+                                                to
                                                 their first reaction?</label></td>
                                         <td style="padding-top: 0em;text-align: right;">
-                                            <select name="antibioticBefore" id="antibioticBefore" class="form-select drop">
+                                            <select name="antibioticBefore" id="antibioticBefore"
+                                                class="form-select drop">
                                                 <option value="never used penicillins">Never</option>
                                                 <option value="used penicillins a few times">A few times</option>
                                                 <option value="used penicillins many times">Many times</option>
@@ -634,7 +635,8 @@
                                         </td>
                                     </tr>
                                     <tr class="questionTableRow">
-                                        <td><label for="reactionTiming">How soon after starting a penicillin did they have a
+                                        <td><label for="reactionTiming">How soon after starting a penicillin did they
+                                                have a
                                                 reaction?</label></td>
                                         <td style="text-align: right;">
                                             <select name="reactionTiming" id="reactionTiming" class="form-select drop">
@@ -646,7 +648,8 @@
                                         </td>
                                     </tr>
                                     <tr class="questionTableRow">
-                                        <td><label for="whenreact">More specifically, when was their last reaction?</label>
+                                        <td><label for="whenreact">More specifically, when was their last
+                                                reaction?</label>
                                         </td>
                                         <td style="text-align: right;">
                                             <select name="whenreact" id="whenreact" class="form-select drop">
@@ -658,7 +661,8 @@
                                         </td>
                                     </tr>
                                     <tr class="questionTableRow">
-                                        <td style="padding-top: 1em;padding-bottom: 0.5em;"><label for="whatreaction">What
+                                        <td style="padding-top: 1em;padding-bottom: 0.5em;"><label
+                                                for="whatreaction">What
                                                 was their reaction?</label></td>
                                         <td style="padding-top: 1em;padding-bottom: 0.5em;">
                                             <label class="checkmarkcontainer"> Rash
@@ -727,7 +731,7 @@
                                                     <span class="checkmark"></span>
                                                 </label>
                                                 <label class="checkmarkcontainer"
-                                                    style="display: inline-block; padding-right: 1em"> SJS rash
+                                                    style="display: inline-block; padding-right: 1em"> SJS rash (desquaminating)
                                                     <input type="checkbox" name="SJS" value="desquaminating">
                                                     <span class="checkmark"></span>
                                                 </label>
@@ -752,7 +756,8 @@
                                         <td><label for="treatment">How was their reaction treated?</label></td>
                                         <td style="text-align: right;">
                                             <select name="treatment" id="treatment" class="form-select drop">
-                                                <option value="nothing besides stopping the penicillin">No treatment aside
+                                                <option value="nothing besides stopping the penicillin">No treatment
+                                                    aside
                                                     from stopping penicillin</option>
                                                 <option value="IM epinephrine">Epinephrine</option>
                                                 <option value="antihistamines">Antihistamines</option>
@@ -778,7 +783,7 @@
                                                 placeholder="Type here ... " class="drop">
                                         </td>
                                     </tr>
-                                    <tr class="questionTableRow">
+                                    <!-- <tr class="questionTableRow">
                                         <td><label for="anaphylaxis">Have they ever had a formally diagnosed episode of
                                                 Anaphylaxis?</label></td>
                                         <td style="text-align: right;">
@@ -788,37 +793,51 @@
                                                 <option value="are unsure if they have">Unsure</option>
                                             </select>
                                         </td>
-                                    </tr>
+                                    </tr> -->
 
                                 </table>
                             </div>
-                        
+
                         </div>
                     </div>
-                
+
                 </div>
                 <!-- decision box with buttons -->
                 <div class="whitebox">
-                    
+
+                    <!-- Here is the default answer -->
                     <h3 class="feature-subtitle">Are they safe for a challenge?</h3>
                     <p id="decision">
-                        Patient is safe for oral challenge without referral to allergist.                   
-                        If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page.
+                        Patient is safe for oral challenge without referral to allergist.
+                        If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L
+                        O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM
+                        epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and
+                        equipment. Please see the 'How to perform a challenge' page.
                     </p>
-                    <div style="text-align: center;">
-                    <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
-                     <p style="display: inline;" id="indicText"><b>-- HPI and PDF buttons not ready. Requires penicillin name above --</b></p> 
-                    <button type="button" class="indicButton btn btn-primary" style="background-color: red;border: red;" disabled></button>
-                    </div>
-                    <div class="d-grid gap-2">
-                        
-                        <button class="btn btn-primary disabled" type="button" 
-                            onclick="createHPI_copypaste()" id="hpiBut" style="border: 0px; background-color:#C70039">Copy Paste HPI</button>
-                        <a target ="_blank" style="background-color: #C70039;" href = "#"class="btn btn-primary disabled" aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()" id="pdfBut">Generated PDF referral link.<br>Desktop: Right-click and open in new tab<br>Mobile: long press and download link</a>
-                            
 
-  
-                                
+                    <!-- indicator for button readyness -->
+                    <div style="text-align: center;">
+                        <button type="button" class="indicButton btn btn-primary"
+                            style="background-color: red;border: red;" disabled></button>
+                        <p style="display: inline;" id="indicText"><b>-- HPI and PDF buttons not ready. Requires
+                                penicillin name above --</b></p>
+                        <button type="button" class="indicButton btn btn-primary"
+                            style="background-color: red;border: red;" disabled></button>
+                    </div>
+
+                    <!-- acutal buttons -->
+                    <div class="d-grid gap-2">
+
+                        <button class="btn btn-primary disabled" type="button" onclick="createHPI_copypaste()"
+                            id="hpiBut" style="border: 0px; background-color:#C70039">Copy Paste HPI</button>
+                        <a target="_blank" style="background-color: #C70039;" href="#" class="btn btn-primary disabled"
+                            aria-disabled="true" tabindex="-1" role="button" onclick="createPDFSummary()"
+                            id="pdfBut">Generated PDF referral link.<br>Desktop: Right-click and open in new
+                            tab<br>Mobile: long press and download link</a>
+
+
+
+
                     </div>
                     </br>
                 </div>
@@ -876,18 +895,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
     </script>
     <script>
-        function listGrammar(str, and=true){
+
+        // given a string separated by commas/spaces "a, b, c", will add "and" or "or" appropriately
+        // input: str "a, b, c, ..." bool and
+        // output: str "a, b, and c" or "a, b, or c"
+        function listGrammar(str, and = true) {
             var lastComIndex = str.lastIndexOf(",");
-            var grammerz = and? str.substring(0, lastComIndex) + " and" + str.substring(lastComIndex + 1) : str.substring(0, lastComIndex) + " or" + str.substring(lastComIndex + 1) 
-            if (lastComIndex > -1){
+            var grammerz = and ? str.substring(0, lastComIndex) + " and" + str.substring(lastComIndex + 1) : str.substring(0, lastComIndex) + " or" + str.substring(lastComIndex + 1)
+            if (lastComIndex > -1) {
                 return grammerz
-            }            
-            else{
+            }
+            else {
                 return str
             }
 
         }
-        
+
+        // getter functions by ID or name
         function byID(id) {
             return document.getElementById(id)
         }
@@ -895,49 +919,51 @@
             return document.getElementsByName(name)
         }
         
-        // enable or disable buttons if no name
+        // enable or disable pdf/hpi buttons based on if penicillin name inputted
         byID("penicillin").addEventListener('input', function (event) {
-            // do stuff here
-            if(byID("penicillin").value!=''){
+            // if user selects a penicillin
+            if (byID("penicillin").value != '') {
                 byID("indicText").innerHTML = "HPI and PDF buttons enabled"
                 var indicBut = document.getElementsByClassName("indicButton")
-                indicBut[0].setAttribute("style","background-color: green;border: green")
-                indicBut[1].setAttribute("style","background-color: green;border: green")
-                
-                byID('pdfBut').classList.remove('disabled')
-                byID('pdfBut').setAttribute("aria-disabled","false")
-                byID('hpiBut').classList.remove('disabled')
-                byID('pdfBut').setAttribute("style","background-color:#409c5fc2")
-                byID('hpiBut').setAttribute("style","background-color:#409c5fc2")
+                indicBut[0].setAttribute("style", "background-color: green;border: green")
+                indicBut[1].setAttribute("style", "background-color: green;border: green")
 
-                
-                
-            }else{
+                byID('pdfBut').classList.remove('disabled')
+                byID('pdfBut').setAttribute("aria-disabled", "false")
+                byID('hpiBut').classList.remove('disabled')
+                byID('pdfBut').setAttribute("style", "background-color:#409c5fc2")
+                byID('hpiBut').setAttribute("style", "background-color:#409c5fc2")
+
+            } else {
                 byID("indicText").innerHTML = "-- HPI and PDF buttons not ready. Requires penicillin name above--"
                 var indicBut = document.getElementsByClassName("indicButton")
-                indicBut[0].setAttribute("style","background-color: red;border: red;")
-                indicBut[1].setAttribute("style","background-color: red;border: red;")
+                indicBut[0].setAttribute("style", "background-color: red;border: red;")
+                indicBut[1].setAttribute("style", "background-color: red;border: red;")
                 byID('pdfBut').classList.add("disabled");
-                byID('pdfBut').setAttribute("aria-disabled","true")
+                byID('pdfBut').setAttribute("aria-disabled", "true")
                 byID('hpiBut').classList.add("disabled");
-                byID('pdfBut').setAttribute("style","background-color:#C70039")
-                byID('hpiBut').setAttribute("style","background-color:#C70039")
+                byID('pdfBut').setAttribute("style", "background-color:#C70039")
+                byID('hpiBut').setAttribute("style", "background-color:#C70039")
             }
         });
-        if(byID("penicillin").value!=''){
+
+        // i guess this is for when the webpage first loads?
+        if (byID("penicillin").value != '') {
             byID("indicText").innerHTML = "HPI and PDF buttons enabled"
-                var indicBut = document.getElementsByClassName("indicButton")
-                indicBut[0].setAttribute("style","background-color: green;border: green")
-                indicBut[1].setAttribute("style","background-color: green;border: green")
-                
-                byID('pdfBut').classList.remove('disabled')
-                byID('pdfBut').setAttribute("aria-disabled","false")
-                byID('hpiBut').classList.remove('disabled')
-                byID('pdfBut').setAttribute("style","background-color:#409c5fc2")
-                byID('hpiBut').setAttribute("style","background-color:#409c5fc2")
+            var indicBut = document.getElementsByClassName("indicButton")
+            indicBut[0].setAttribute("style", "background-color: green;border: green")
+            indicBut[1].setAttribute("style", "background-color: green;border: green")
+
+            byID('pdfBut').classList.remove('disabled')
+            byID('pdfBut').setAttribute("aria-disabled", "false")
+            byID('hpiBut').classList.remove('disabled')
+            byID('pdfBut').setAttribute("style", "background-color:#409c5fc2")
+            byID('hpiBut').setAttribute("style", "background-color:#409c5fc2")
         }
-        
-        //to get score use method below
+
+        // gets all the user input into the tool and outputs nice format
+        // input: nothing
+        // output: [score, pregnant, badOutConDesc, confoundDesc, sympDesc, penicillin, indication, abxBefore, howSoonAfter, whenWasReact, treatment, penAfter, otherallergies, badOutConPosit, confoundPosit]        
         function getInput() {
             var q1 = byID('q1').checked
             var q2 = byID('q2').checked
@@ -946,29 +972,31 @@
             var score = 0
             var penfast = [q1, q2, q3, q4]
 
-            // need score
-            score = q1? score + 2 : score 
-            score = q2? score + 2 : score                    
-                if(!q2){
-                    score = q3? score + 2 : score 
-                }
-                score = q4? score + 1 : score
+            // scoring for penfast is a bit weird; see tool paper graphic 
+            score = q1 ? score + 2 : score
+            score = q2 ? score + 2 : score
+            if (!q2) {
+                score = q3 ? score + 2 : score
+            }
+            score = q4 ? score + 1 : score
 
-            var pregnant = byID('q5').checked ? '+is pregnant' : "pregnancy" 
-            var betaBlock = byID("q6").checked ? '+has current beta-blocker use' : "current beta-blocker use" 
-            var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF / CAD / arrhythmogenic / valvular)' : "significant cardiac disease (CHF / CAD / arrhythmogenic / valvular)"  
-            var uncontrolAsthma = byN("unconasthma")[0].checked ? '+has uncontrolled asthma' : 'uncontrolled asthma' 
-            var unconezcema = byN("unconezcema")[0].checked ? '+has uncontrolled ezcema' : 'uncontrolled ezcema' 
-            var severCOPD = byN("sevCOPD")[0].checked ? '+has severe COPD' : 'severe COPD' 
+            // bunch of language nonsense
+            var pregnant = byID('q5').checked ? '+is pregnant' : "pregnancy"
+            var betaBlock = byID("q6").checked ? '+has current beta-blocker use' : "current beta-blocker use"
+            var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF / CAD / arrhythmogenic / valvular)' : "significant cardiac disease (CHF / CAD / arrhythmogenic / valvular)"
+            var uncontrolAsthma = byN("unconasthma")[0].checked ? '+has uncontrolled asthma' : 'uncontrolled asthma'
+            var unconezcema = byN("unconezcema")[0].checked ? '+has uncontrolled ezcema' : 'uncontrolled ezcema'
+            var severCOPD = byN("sevCOPD")[0].checked ? '+has severe COPD' : 'severe COPD'
             var ild = byN("ild")[0].checked ? '+has ILD' : 'ILD'
-            var mastocyt = byN("mastocyt")[0].checked ? '+has mastocytosis' : 'mastocytosis' 
-            var unconAllrhin = byN("unconallrhin")[0].checked ? '+has uncontrolled allergic rhinitis' : 'uncontrolled allergic rhinitis' 
-            var acuteInfect = byN("acuteinfect")[0].checked ? '+has current acute infection' : 'current acute infection' 
-            var chronUrt = byN("chronurt")[0].checked ? '+has uncontrolled baseline urticaria' : 'uncontrolled baseline urticaria' 
+            var mastocyt = byN("mastocyt")[0].checked ? '+has mastocytosis' : 'mastocytosis'
+            var unconAllrhin = byN("unconallrhin")[0].checked ? '+has uncontrolled allergic rhinitis' : 'uncontrolled allergic rhinitis'
+            var acuteInfect = byN("acuteinfect")[0].checked ? '+has current acute infection' : 'current acute infection'
+            var chronUrt = byN("chronurt")[0].checked ? '+has uncontrolled baseline urticaria' : 'uncontrolled baseline urticaria'
 
+            // construct composite of bad comorbidites
             var badOutConPosit = []
             var badOutConNeg = []
-            var badOutConL = [pregnant, betaBlock, heartDisease, uncontrolAsthma, severCOPD,ild]
+            var badOutConL = [pregnant, betaBlock, heartDisease, uncontrolAsthma, severCOPD, ild]
             for (x in badOutConL) {
                 if (badOutConL[x].charAt(0) == "+") {
                     badOutConL[x] = badOutConL[x].replace('+', '')
@@ -979,13 +1007,13 @@
                 }
             }
             badOutConPosit = badOutConPosit.length > 0 ? "Patient " + listGrammar(badOutConPosit.join(", ")) + ". " : ""
-            badOutConNeg = badOutConNeg.length > 0 ? "No known history of " + listGrammar(badOutConNeg.join(", "),false) : ''
+            badOutConNeg = badOutConNeg.length > 0 ? "No known history of " + listGrammar(badOutConNeg.join(", "), false) : ''
             badOutConDesc = badOutConPosit + badOutConNeg
-            
 
+            // construct composite of confounders
             confoundPosit = []
             confoundNeg = []
-            confoundL = [unconezcema,mastocyt,unconAllrhin,acuteInfect,chronUrt]
+            confoundL = [unconezcema, mastocyt, unconAllrhin, acuteInfect, chronUrt]
             for (x in confoundL) {
                 if (confoundL[x].charAt(0) == "+") {
                     confoundL[x] = confoundL[x].replace('+', '')
@@ -996,26 +1024,26 @@
                 }
             }
             confoundPosit = confoundPosit.length > 0 ? "Patient " + listGrammar(confoundPosit.join(", ")) + ". " : ""
-            confoundNeg = confoundNeg.length > 0 ? "No known history of " + listGrammar(confoundNeg.join(", "),false) : ''
+            confoundNeg = confoundNeg.length > 0 ? "No known history of " + listGrammar(confoundNeg.join(", "), false) : ''
             confoundDesc = confoundPosit + confoundNeg
-            
+
 
             var rash = byN("rash")[0].checked ? "rash" : ""
             //var morbili = byN("mobiliform")[0].checked ? "mobiliform" : "" 
-            var urticarial = byN("urticarial")[0].checked ? "urticarial" : "" 
-            var SJS = byN("SJS")[0].checked ? "desquaminating" : "" 
-            var otherRash = byN("otherrash")[0].checked ? "other morphology" : "" 
-            var dyspnea = byN("dyspnea")[0].checked ? "+dyspnea" : "dyspnea" 
-            var syncope = byN("syncope")[0].checked ? "+syncope" : "syncope" 
-            var angioedema = byN("angioedema")[0].checked ? "+angioedema" : "angioedema" 
-            var diarrhea = byN("diarrhea")[0].checked ? "+diarrhea" : "diarrhea" 
-            var aki = byN("aki")[0].checked ? "+AKI" : "AKI" 
-            var vomiting = byN("vomiting")[0].checked ? "+emesis" : "emesis" 
-            var liver = byN("liverInjury")[0].checked ? "+liver injury" : "liver injury" 
-            var mouthgent = byID('mouthgent').checked ? '+involvement of mouth and/or genitalia' : "involvement of mouth or genitalia" 
+            var urticarial = byN("urticarial")[0].checked ? "urticarial" : ""
+            var SJS = byN("SJS")[0].checked ? "desquaminating" : ""
+            var otherRash = byN("otherrash")[0].checked ? "other morphology" : ""
+            var dyspnea = byN("dyspnea")[0].checked ? "+dyspnea" : "dyspnea"
+            var syncope = byN("syncope")[0].checked ? "+syncope" : "syncope"
+            var angioedema = byN("angioedema")[0].checked ? "+angioedema" : "angioedema"
+            var diarrhea = byN("diarrhea")[0].checked ? "+diarrhea" : "diarrhea"
+            var aki = byN("aki")[0].checked ? "+AKI" : "AKI"
+            var vomiting = byN("vomiting")[0].checked ? "+emesis" : "emesis"
+            var liver = byN("liverInjury")[0].checked ? "+liver injury" : "liver injury"
+            var mouthgent = byID('mouthgent').checked ? '+involvement of mouth and/or genitalia' : "involvement of mouth or genitalia"
             var positives = []
             var negatives = []
-            var symptomList = [dyspnea, angioedema, syncope, diarrhea, vomiting, aki, liver,mouthgent]
+            var symptomList = [dyspnea, angioedema, syncope, diarrhea, vomiting, aki, liver, mouthgent]
             for (x in symptomList) {
                 if (symptomList[x].charAt(0) == "+") {
                     symptomList[x] = symptomList[x].replace('+', '')
@@ -1040,32 +1068,32 @@
                 negatives.unshift("rash")
             }
             positives = listGrammar(positives.join(", "))
-            negatives = listGrammar(negatives.join(", "),false)
+            negatives = listGrammar(negatives.join(", "), false)
 
             // if negatives has items, then do stuff. otherwise eh
-            sympDesc = negatives !=""? positives + ". There was no history of " + negatives + "." : positives + "."
+            sympDesc = negatives != "" ? positives + ". There was no history of " + negatives + "." : positives + "."
 
-
-            var penicillin = byID("penicillin").value 
-            var indication = byID('indication').value 
-            var abxBefore = byID('antibioticBefore').value 
-            var howSoonAfter = byID('reactionTiming').value  
-            var whenWasReact = byID('whenreact').value 
-            var treatment = byID("treatment").value 
-            var penAfter = byID("repeatAbx").value 
+            var penicillin = byID("penicillin").value
+            var indication = byID('indication').value
+            var abxBefore = byID('antibioticBefore').value
+            var howSoonAfter = byID('reactionTiming').value
+            var whenWasReact = byID('whenreact').value
+            var treatment = byID("treatment").value
+            var penAfter = byID("repeatAbx").value
             var otherallergies = byID("otherallergies").value == "" ? "No other allergies known." : byID("otherallergies").value  //26
-            var anap = byID("anaphylaxis").value 
-            var data = [score, pregnant, badOutConDesc, confoundDesc, sympDesc, penicillin,indication,abxBefore,howSoonAfter,whenWasReact,treatment,penAfter,otherallergies,badOutConPosit,confoundPosit]
+            var anap = byID("anaphylaxis").value
+            var data = [score, pregnant, badOutConDesc, confoundDesc, sympDesc, penicillin, indication, abxBefore, howSoonAfter, whenWasReact, treatment, penAfter, otherallergies, badOutConPosit, confoundPosit]
             return data
         }
 
         // https://github.com/parallax/jsPDF
         // https://parall.ax/products/jspdf
+        // activated by pdf button
         // input is array of outputs for thing
         function createPDFSummary() {
             userInput = getInput()
-            var pdfBut = byID("pdfBut")           
-            
+            var pdfBut = byID("pdfBut")
+
             // Default export is a4 paper, portrait, using millimeters for units
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
@@ -1075,7 +1103,7 @@
             doc.setFontSize(12)
             doc.setDrawColor(0, 0, 0)
             doc.line(20, 25, 190, 25) // horizontal line
-            
+
             // doc.setDrawColor(255, 0, 0)
             // // create box for patient information
             // doc.line(20, 25, 190, 25)
@@ -1084,7 +1112,7 @@
             // doc.line(190, 30, 190, 60) // vertical line
             // doc.line(120, 30, 190, 30) // xy xy
             // doc.line(120, 60, 190, 60) // xy xy
-            
+
 
             doc.setFont(undefined, 'bold')
             doc.text("Name: ", 20, 40)
@@ -1101,27 +1129,35 @@
                 " Treatment was " + userInput[10] + ". They have " + userInput[7] + " before their reaction. They " + userInput[11] + " had penicillins since this reaction.\n\n" +
                 "PEN-FAST score: " + userInput[0] + " => " + boldScore(userInput[0]) + "\n\n" +
                 "Impression and Plan:\n" +
-                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)','(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
+                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)', '(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
             text = doc.splitTextToSize(text, 170)
             doc.text(text, 20, 70)
             doc.text("Comments below:", 20, 240)
             //doc.output('dataurlnewwindow');
 
             pdfBut.href = doc.output("bloburl")
-                    
-        }
-        window.oncontextmenu = function () {
-            if(byID("penicillin").value!=''){
-            createPDFSummary()
-            }            
+
         }
 
+        // when user right clicks button or wherever on the screen, the things updtaes?
+        // honestly not too sure why i wrote this, maybe debugging
+        window.oncontextmenu = function () {
+            if (byID("penicillin").value != '') {
+                createPDFSummary()
+            }
+        }
+
+        // create HPI copypaste similar to pdf
+        // acitvated by button 
         function createHPI_copypaste() {
             userInput = getInput()
+            // technically this should never run
             if (userInput[5] == "") {
                 alert("please type name of penicillin.")
                 return
             }
+
+            // text to cp
             text = "[Name] is a [age and sex] with a history of " + userInput[5] + " allergy.\n\n" +
                 "Pertinent conditions/comorbidities:\n" +
                 userInput[2] + "\n\n" +
@@ -1133,18 +1169,20 @@
                 " Treatment was " + userInput[10] + ". They have " + userInput[7] + " before their reaction. They " + userInput[11] + " had penicillins since this reaction.\n\n" +
                 "PEN-FAST score: " + userInput[0] + " => " + boldScore(userInput[0]) + "\n\n" +
                 "Impression and Plan:\n" +
-                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)','(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
-
+                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)', '(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
 
             navigator.clipboard.writeText(text);
             console.log(text)
             return (text)
         }
+
+        // for boldscore method below; will adjust bolding of descriptionbox with score
         function resetBold(l, m, h) {
             l.setAttribute("style", "font-weight: normal;");
             m.setAttribute("style", "font-weight: normal;");
             h.setAttribute("style", "font-weight: normal;");
         }
+        // interprets score and spits out risk string
         function boldScore(score) {
             var t = "of positive penicillin allergy test"
             var none = byID("0p")
@@ -1167,52 +1205,55 @@
                 med.setAttribute("style", "font-weight: bold;");
                 description = "Moderate risk (20%) " + t
             }
-            else if (score == 4||score == 5) {
+            else if (score == 4 || score == 5) {
                 resetBold(low, med, high)
                 high.setAttribute("style", "font-weight: bold;");
                 description = "High risk (50%) " + t
             }
             return description;
         }
+
+        // based on score and pregnancy will spit out final decision / impression and plan
+        // just a bunch of string manipulation of user input to make a decision
         function decisionText(score, preg = false) {
             var userInput = getInput()
             var pen = userInput[5]
             var badOutCon = true
             // need to remove "has"
-            var badOutConPosit = userInput[13]!=''? userInput[13].substring(8).replaceAll('has ', '').replaceAll('is pregnant, ', '').replaceAll('is pregnant and ', '').replaceAll('.', '').trim() : badOutCon=false
-            badOutCon = badOutConPosit=="is pregnant"?false:badOutCon
-            
+            var badOutConPosit = userInput[13] != '' ? userInput[13].substring(8).replaceAll('has ', '').replaceAll('is pregnant, ', '').replaceAll('is pregnant and ', '').replaceAll('.', '').trim() : badOutCon = false
+            badOutCon = badOutConPosit == "is pregnant" ? false : badOutCon
+
             var confound = true
-            var confoundPosit = userInput[14]!=''? userInput[14].substring(8).replaceAll('has ', '').replaceAll('.', '').trim() : confound=false 
-            
+            var confoundPosit = userInput[14] != '' ? userInput[14].substring(8).replaceAll('has ', '').replaceAll('.', '').trim() : confound = false
+
             //text if challenge can be done
-            var setting = "If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page."     
+            var setting = "If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page."
             //insert logic for score
             var decisionBox = byID('decision');
             if (preg) {
                 decisionBox.innerHTML = "Overall recommend a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. Typically preceding challenge we would undertake skin testing and subsequently a 2 step oral challenge."
-                if (score == 3 || score == 4 || score==5) {
+                if (score == 3 || score == 4 || score == 5) {
                     decisionBox.innerHTML = decisionBox.innerHTML + " In addition, they are at moderate or high risk of having a true allergy."
                 }
                 if (badOutCon) {
                     decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, their history is significant for " + badOutConPosit + ", which creates higher risk with a challenge."
                 }
-                if (confound){
-                    decisionBox.innerHTML = decisionBox.innerHTML + " The presence of "+confoundPosit + " also would make interpretation of results difficult."
+                if (confound) {
+                    decisionBox.innerHTML = decisionBox.innerHTML + " The presence of " + confoundPosit + " also would make interpretation of results difficult."
                 }
                 return decisionBox.innerHTML
             }
             else if (score == 0 || score == 1 || score == 2) {
                 if (badOutCon || confound) {
-                    decisionBox.innerHTML = "Patient is likely safe for oral challenge. However, the risks and benefits of a challenge must be carefully considered given the patient's history, and referral to an Allergist may be helpful." 
-                    
-                    if(badOutCon){
-                        decisionBox.innerHTML = decisionBox.innerHTML + " Namely, their medical history of "+badOutConPosit+" creates higher risk with a challenge."
+                    decisionBox.innerHTML = "Patient is likely safe for oral challenge. However, the risks and benefits of a challenge must be carefully considered given the patient's history, and we recommend referral to an Allergist."
+
+                    if (badOutCon) {
+                        decisionBox.innerHTML = decisionBox.innerHTML + " Namely, their medical history of " + badOutConPosit + " creates higher risk with a challenge."
                     }
-                    if(confound){
-                        decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, the presence of "+confoundPosit+" would also make interpretation of the results difficult."
+                    if (confound) {
+                        decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, the presence of " + confoundPosit + " would also make interpretation of the results difficult."
                     }
-                    decisionBox.innerHTML = decisionBox.innerHTML +"\n\n"+setting                    
+                    decisionBox.innerHTML = decisionBox.innerHTML + "\n\n" + setting
                     return decisionBox.innerHTML
                 } else {
                     decisionBox.innerHTML = "Patient is safe for oral challenge without referral to allergist. \n\n" + setting
@@ -1225,10 +1266,8 @@
                 return decisionBox.innerHTML
             }
         }
-        function scoreEdit(q, score) {
-            if (q.checked) { score = score + 1 } else { score = score - 1 }
-            return score;
-        }
+
+        // will determine the score, adds listeners to penfast score questions + comorb + confounders
         function tallyScore() {
             document.addEventListener('DOMContentLoaded', function () {
                 var q1 = byID("q1") // time
@@ -1242,7 +1281,7 @@
                 var severCOPD = byN("sevCOPD")[0]
                 var ild = byN("ild")[0]
 
-                var unconezcema = byN("unconezcema")[0]                
+                var unconezcema = byN("unconezcema")[0]
                 var mastocyt = byN("mastocyt")[0]
                 var unconAllrhin = byN("unconallrhin")[0]
                 var unconUrtic = byN('chronurt')[0]
@@ -1258,56 +1297,45 @@
 
                 // timing, 2 points
                 q1.addEventListener('change', function () {
-                        //edit score
-                        score = q1.checked? score + 2 : score - 2 
-                        decisionText(score, preg)
-                        scoredisplay.innerHTML = score + " points: " + boldScore(score)
-                    });
-                
+                    //edit score
+                    score = q1.checked ? score + 2 : score - 2
+                    decisionText(score, preg)
+                    scoredisplay.innerHTML = score + " points: " + boldScore(score)
+                });
+
                 // ana/angio OR severe cut = 2 points
                 q2.addEventListener('change', function () {
                     // if q3 already checked then don't add new score or subtract
-                    if(!q3.checked){
-                        score = q2.checked? score + 2 : score - 2 
+                    if (!q3.checked) {
+                        score = q2.checked ? score + 2 : score - 2
                     }
-                     
+
                     decisionText(score, preg)
                     scoredisplay.innerHTML = score + " points: " + boldScore(score)
                 });
                 q3.addEventListener('change', function () {
                     //edit score
                     // if q3 already checked then don't add new score or subtract
-                    if(!q2.checked){
-                        score = q3.checked? score + 2 : score - 2 
+                    if (!q2.checked) {
+                        score = q3.checked ? score + 2 : score - 2
                     }
                     decisionText(score, preg)
                     scoredisplay.innerHTML = score + " points: " + boldScore(score)
-                });            
-                
+                });
+
                 // treatment
                 q4.addEventListener('change', function () {
-                        //edit score
-                        score = q4.checked? score + 1 : score - 1 
-                        decisionText(score, preg)
-                        scoredisplay.innerHTML = score + " points: " + boldScore(score)
-                    });
-
-                // var qQuestions = [q1, q2, q3, q4]
-                // qQuestions.forEach(element => {
-                //     element.addEventListener('change', function () {
-                //         score = scoreEdit(element, score)
-                //         decisionText(score, preg)
-                //         scoredisplay.innerHTML = score + " points: " + boldScore(score)
-                //     });
-                // });
-
-
+                    //edit score
+                    score = q4.checked ? score + 1 : score - 1
+                    decisionText(score, preg)
+                    scoredisplay.innerHTML = score + " points: " + boldScore(score)
+                });
 
                 q5.addEventListener('change', function () {
                     preg = q5.checked ? true : false
                     decisionText(score, preg)
                 });
-                var otherSwit = [q6, q7, uncontrolAsthma, unconezcema, severCOPD, mastocyt,ild,unconAllrhin,unconUrtic,acuteInfect]
+                var otherSwit = [q6, q7, uncontrolAsthma, unconezcema, severCOPD, mastocyt, ild, unconAllrhin, unconUrtic, acuteInfect]
                 otherSwit.forEach(element => {
                     element.addEventListener('change', function () {
                         decisionText(score, preg)
@@ -1316,44 +1344,27 @@
             });
         }
         tallyScore()
-        // SPECIFICALLY FOR THE HPI, NOT FOR OTHERS.
-
         
+        // collapse function for questions to generate HPI within the scrollbox
         function collapseIcon(collapseID, iconID) {
             var myCollapsible = byID(collapseID)
             var collapseText = byID("collapseText")
             myCollapsible.addEventListener('hide.bs.collapse', function () {
                 byID(iconID).className = "bi bi-plus-lg";
-                collapseText.innerHTML = collapseText.innerHTML.replace("SCROLL DOWN TO SEE QUESTIONS: ","TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ")
+                collapseText.innerHTML = collapseText.innerHTML.replace("SCROLL DOWN TO SEE QUESTIONS: ", "TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ")
             })
             // will act first
             myCollapsible.addEventListener('show.bs.collapse', function () {
                 byID(iconID).className = "bi bi-dash-lg";
-                collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ","SCROLL DOWN TO SEE QUESTIONS: ")
+                collapseText.innerHTML = collapseText.innerHTML.replace("TO GENERATE HPI/PDF Referral, ANSWER BELOW QUESTIONS: ", "SCROLL DOWN TO SEE QUESTIONS: ")
             })
             myCollapsible.addEventListener('shown.bs.collapse', function () {
-                document.getElementById("jumpto").scrollIntoView({behavior: 'smooth'});  
+                document.getElementById("jumpto").scrollIntoView({ behavior: 'smooth' });
             })
-
-            
         }
         collapseIcon("links", "refIcon")
-        
-        function getH() {
-            return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 500 : document.getElementById('toolBox').getBoundingClientRect().height + document.getElementById('toolInfo').getBoundingClientRect().height + 700
-        }
 
-        byID("top").setAttribute("style", "height:" + getH() + "px")
-        byID('toolscrollbox').setAttribute("style", "max-height:" + (document.getElementById('toolBox').getBoundingClientRect().height -20) +"px;overflow:auto;")
-        //byID('toolscrollbox').setAttribute("style", "max-height:800px;overflow:auto;")
-
-        //resize background colour dynamically
-        window.addEventListener('resize', function (event) {
-            // do stuff here
-            byID("top").setAttribute("style", "height:" + getH() + "px")
-        });
-
-        
+        // allows the other options (ie for skin rash) to be shown
         function showOtherOptions(id, name) {
             var row = byID(id)
             var checkbox = byN(name)[0]
@@ -1364,6 +1375,24 @@
                 row.setAttribute("style", "display:none;")
             }
         }
+
+        // this is some dumb stuff with heights, it doesn't work well
+        function getH() {
+            return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 500 : document.getElementById('toolBox').getBoundingClientRect().height + document.getElementById('toolInfo').getBoundingClientRect().height + 700
+        }
+
+        byID("top").setAttribute("style", "height:" + getH() + "px")
+        byID('toolscrollbox').setAttribute("style", "max-height:" + (document.getElementById('toolBox').getBoundingClientRect().height - 20) + "px;overflow:auto;")
+        //byID('toolscrollbox').setAttribute("style", "max-height:800px;overflow:auto;")
+
+        //resize background colour dynamically
+        window.addEventListener('resize', function (event) {
+            // do stuff here
+            byID("top").setAttribute("style", "height:" + getH() + "px")
+        });
+
+
+        
     </script>
 </body>
 
