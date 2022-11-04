@@ -490,7 +490,7 @@
                                 </td>
                             </tr>
                             <tr class="questionTableRow">
-                                <td>When you had the reaction, was any treatment given besides stopping the penicillin?
+                                <td>When you had the reaction, was any treatment given besides stopping the penicillin? If you are unsure, say "Yes".
                                 </td>
                                 <td>
                                     <label class="qswitch">
@@ -1203,7 +1203,7 @@
                 }
                 else if (score == 0 || score == 1 || score == 2) {
                     if (badOutCon || confound) {
-                        decisionText = "Patient is likely safe for oral challenge. However, the risks and benefits of a challenge must be carefully considered given the patient's history, and referral to an Allergist may be helpful."
+                        decisionText = "Patient is likely safe for oral challenge. However, overall referral to an Allergist recommended as the risks and benefits of a challenge must be carefully considered given the patient's history."
 
                         if (badOutCon) {
                             decisionText = decisionText + " Namely, their medical history of " + badOutConPosit + " creates higher risk with a challenge."
@@ -1241,7 +1241,7 @@
                 }
                 else if (score == 0 || score == 1 || score == 2) {
                     if (badOutCon || confound) {
-                        decisionBox.innerHTML = "You are likely safe for oral challenge. However, you should discuss the risks and benefits with your family doctor given your medical/medication history, and they may decide to refer to an Allergist."
+                        decisionBox.innerHTML = "You are likely safe for oral challenge. However, given your medical/medication history we would recommend referral to an allergist from your family doctor for further discussion of risks/benefits."
 
                         if (badOutCon) {
                             decisionBox.innerHTML = decisionBox.innerHTML + " Namely, your medical history of " + badOutConPosit + " does create higher risk with an oral challenge."
