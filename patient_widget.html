@@ -1203,7 +1203,7 @@
                 }
                 else if (score == 0 || score == 1 || score == 2) {
                     if (badOutCon || confound) {
-                        decisionText = "Patient is likely safe for oral challenge. However, overall referral to an Allergist recommended as the risks and benefits of a challenge must be carefully considered given the patient's history."
+                        decisionText = "Overall recommend an oral challenge after referral to an allergist. While likely safe, the risks and benefits of a challenge must be carefully considered given the patient's history."
 
                         if (badOutCon) {
                             decisionText = decisionText + " Namely, their medical history of " + badOutConPosit + " creates higher risk with a challenge."
@@ -1214,7 +1214,7 @@
                         decisionText = decisionText + "\n\n" + setting
                         return decisionText
                     } else {
-                        decisionText = "Patient is safe for oral challenge without referral to allergist. \n\n" + setting
+                        decisionText = "Recommend an oral challenge. Patient is safe for oral challenge without referral to allergist. \n\n" + setting
                         return decisionText
                     }
                 }
@@ -1241,7 +1241,7 @@
                 }
                 else if (score == 0 || score == 1 || score == 2) {
                     if (badOutCon || confound) {
-                        decisionBox.innerHTML = "You are likely safe for oral challenge. However, given your medical/medication history we would recommend referral to an allergist from your family doctor for further discussion of risks/benefits."
+                        decisionBox.innerHTML = "Overall we recommend an oral challenge after referral to an allergist. Given your medical/medication history there should be a discussion of risks/benefits with an allergist."
 
                         if (badOutCon) {
                             decisionBox.innerHTML = decisionBox.innerHTML + " Namely, your medical history of " + badOutConPosit + " does create higher risk with an oral challenge."
@@ -1252,7 +1252,7 @@
                         decisionBox.innerHTML = decisionBox.innerHTML + "\n\n" + setting
                         return decisionBox.innerHTML
                     } else {
-                        decisionBox.innerHTML = "You are likely safe for an oral challenge without referral to allergist. \n\n" + setting
+                        decisionBox.innerHTML = "We recommend an oral challenge. You are likely safe for an oral challenge without referral to allergist. \n\n" + setting
                         return decisionBox.innerHTML
                     }
                 }
