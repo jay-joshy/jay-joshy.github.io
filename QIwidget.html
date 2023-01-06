@@ -159,9 +159,9 @@
         }
 
         
-/* custom scrollbar */
+/* custom scrollbar for the top inner box... shoud be delteed*/ 
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 15px;
 }
 
@@ -178,22 +178,7 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #c9e2e7;
-}
-
-#decisionBox::-webkit-scrollbar-thumb:hover {
-  background-color: #00242b;
-}
-
-#decisionBox::-webkit-scrollbar-thumb {
-  background-color: #00000050;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
-}
-
-#decisionBox::-webkit-scrollbar-thumb:hover {
-  background-color: #000000;
-}
+} */
 
 
         .whitebox p {
@@ -989,15 +974,15 @@
             return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 500 : document.getElementById('toolBox').getBoundingClientRect().height + 500
         }
 
-        //byID("top").setAttribute("style", "height:" + getH() + "px")
-        byID('toolscrollbox').setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
+        // //byID("top").setAttribute("style", "height:" + getH() + "px")
+        // byID('toolscrollbox').setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
         
-        //resize background colour dynamically
-        window.addEventListener('resize', function (event) {
-            // do stuff here
-            //byID("top").setAttribute("style", "height:" + getH() + "px")
-           byID("toolscrollbox").setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
-        });     
+        // //resize background colour dynamically
+        // window.addEventListener('resize', function (event) {
+        //     // do stuff here
+        //     //byID("top").setAttribute("style", "height:" + getH() + "px")
+        //    byID("toolscrollbox").setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
+        // });     
 
 
         function showOtherOptions(id, name) {
