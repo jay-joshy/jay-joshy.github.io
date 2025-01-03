@@ -33,6 +33,17 @@ Secondary goals if time permits includes:
 - Critical appraisal of new research
 - Patient resources translated into different languages
 
+## What needs to happen to allow this to be successful
+
+1. Consistent maintenance
+2. Staff support
+3. A well defined creation, editorial, and deployment process / workflow
+
+- ? editors in charge of a specific section?
+
+4. Good documentation on how to edit the site so that it's not only one person making the edits (too much responsibility and not good for longevity)
+5. A pool of contributors (fellows, residents)
+
 ## Site structure:
 
 - About - goals of the site, contributors, etc.
