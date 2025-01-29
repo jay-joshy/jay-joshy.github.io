@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links to bootstrap 5 and also stylesheet -->
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    
+    
+   
+    <!-- Font links -->
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <!-- Actual style sheet -->
+    <!-- <link rel="stylesheet" href="css/penfastWidgetCSS.css">  -->
+    <!-- cped style -->
+    <style>
+      .pdfobject-container { height: 30rem; border: 1rem solid rgba(0,0,0,.1); }
+      </style>
+
+</head>
+<body id="body">
+        
+    <button>TLEKJL:AJ:</button>
+    <div id="example1"></div>
+    LOL
+    <a href="" target="_blank" id="2">CliuckMePls</a>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <!-- link for script for jfPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+    <script>
+            
+            
+            //PDFObject.embed(createPDF(), "#example1");
+            document.getElementById("2").href=plsWork()
+            
+            
+            function createPDF() {
+              const { jsPDF } = window.jspdf;
+              var doc = new jsPDF();
+          
+              doc.setFont("helvetica");
+              
+                          
+              doc.setFontSize(20);
+              doc.text('TEST PDF...', 105, 20, 'center');
+          
+              return doc.output('datauristring');    
+            }
+            
+
+        // https://github.com/parallax/jsPDF
+        // https://parall.ax/products/jspdf
+        // input is array of outputs for thing
+        function plsWork() {
+            //alert("please")
+
+           // var ifr = document.getElementById("inlineFrameExample")
+            //ifr.src = "http://www.bing.com"
+            // Default export is a4 paper, portrait, using millimeters for units
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.setProperties({
+            title: "Report"
+             });
+            doc.setFont('times')
+            doc.setFontSize(22)
+            doc.text("Penicillin Allergy Challenge Referral", 20, 20);
+           //ifr.src = doc.output('datauristring');    
+           return doc.output('bloburl')
+           
+    
+           
+        }
+        
+        
+    </script>
+</body>
+</html>

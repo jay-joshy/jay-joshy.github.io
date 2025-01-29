@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links to bootstrap 5 and also stylesheet -->
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
+
+
+    <!-- Font links -->
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <!-- Actual style sheet -->
+    <!-- <link rel="stylesheet" href="css/penfastWidgetCSS.css">  -->
+    <!-- cped style -->
+    <style>
+        .footer{
+            
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+        }
+
+        p {
+            color: white;
+            /* text-align: justify; */
+            /* text-justify: inter-word; */
+        }
+        
+        /* MAKE BACKGROUND IMG */
+        .header {
+            background-color: rgb(112, 190, 246);
+
+
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            /* adjust height of widget */
+            height: 70vh;
+        }
+        /* makes the background image darker */
+        .overlay {
+            position: absolute;
+            min-height: 100%;
+            min-width: 100%;
+            left: 0;
+            top: 0;
+            background: rgb(0, 0, 0);
+            /* 0.6 is orig */
+        }
+
+
+        .questionTable {
+            border: none;
+            color: white;
+
+        }
+
+        .questionTableRow {
+            height: 50px;
+
+        }
+
+        .questionTableRowBottom {
+            height: 50px;
+            border-bottom: 1px solid white;
+        }
+
+
+        /* The switch - the box around the slider */
+        .qswitch {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .qswitch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .qslider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(107, 107, 107, 0.507);
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .qslider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: rgba(255, 255, 255, 0.733);
+            -webkit-transition: .4s;
+            transition: .4s;
+            /*  */
+        }
+
+        input:checked+.qslider {
+            background-color: #409c5fc2;
+        }
+
+        input:focus+.qslider {
+            box-shadow: 0 0 1px #409c5fc2;
+        }
+
+        input:checked+.qslider:before {
+            -webkit-transform: translateX(86px);
+            -ms-transform: translateX(86px);
+            transform: translateX(86px);
+        }
+
+        /* Rounded sliders */
+        .qslider.round {
+            border-radius: 34px;
+        }
+
+        .qslider.round:before {
+            border-radius: 50%;
+        }
+
+        /* FOR THE TEXT ON SLIDER */
+        .qslider:after {
+            content: 'No';
+            color: white;
+            display: block;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            font-size: 15px;
+            font-weight: bold;
+            /* font-family: Verdana, sans-serif; */
+        }
+
+        input:checked+.qslider:after {
+            content: 'Yes';
+        }
+
+        
+/* custom scrollbar for the top inner box... shoud be delteed*/ 
+
+/* ::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee150;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c9e2e7;
+} */
+
+
+        .whitebox p {
+            color: black;
+                
+        }
+
+        .whitebox .feature-subtitle {
+            color: black;
+        }
+
+        .whitebox .feature-subsubtitle {
+            color: black;
+        }
+
+
+        /* lets the "go to top" bottom smoothly scroll to top */
+        html,
+        body {
+            margin: 0;
+            font-family: 'League Spartan';
+        }
+
+        
+        #body::-webkit-scrollbar {
+            display: none;
+        }
+        
+
+    
+        i {
+            font-size: 1.3rem;
+        }
+
+
+
+        /* makes the background image darker */
+       
+
+
+        .features {
+            margin: 0em auto;
+            padding: 0px;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            position: relative;
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+
+        .feature-title {
+            color: rgb(255, 255, 255);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+        }
+
+        .feature-subtitle {
+            color: rgb(255, 255, 255);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .feature-subsubtitle {
+            color: rgb(255, 255, 255);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+            font-style: italic;
+        }
+
+        
+        .dropdown {
+            cursor: pointer;
+            margin-bottom: 0px;
+        }
+
+        /* box for def clin box  */
+        .cleandarkBox {
+            /* From https://css.glass */
+             /* From https://css.glass */
+             background: rgb(22, 0, 32);
+            border-radius: 1px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.055);
+
+            padding: 1rem;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin: 0;
+        }
+
+
+        /* BOX FOR DIAG TX */
+        .whitebox {
+            background-color: rgb(255, 255, 255);
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            border-radius: 10px;
+            padding: 20px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+
+        }
+
+        .whitebox p {
+            color: black;
+        }
+
+        .whitebox .feature-subtitle {
+            color: black;
+        }
+
+        .whitebox .feature-subsubtitle {
+            color: black;
+        }
+
+        /* Box surroudning the name of the condition */
+        .titleBox {
+            background-color: rgba(253, 253, 253, 0.95);
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: 20px;
+            padding-top: 5px;
+            padding-bottom: 1px;
+            border-radius: 2px;
+
+        }
+
+        .titleBox .feature-title {
+            color: black;
+        }
+
+        /* FOr csv input file workaround */
+        input[type="file"] {
+            display: none;
+        }
+
+        #linksbox {
+            word-wrap: break-word;
+            /* Internet Explorer 5.5+ */
+        }
+
+
+
+        /* Customize the label (the container) */
+        .checkmarkcontainer {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+        .checkmarkcontainer input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .checkmarkcontainer:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .checkmarkcontainer input:checked~.checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .checkmarkcontainer input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .checkmarkcontainer .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .drop {
+            width: 150px;
+            display: inline-block
+        }
+        .container-fluid{
+            margin:0px;
+            padding:0px;
+        }
+
+        .fixed{
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body id="body">
+    <!-- Header is the main container for content, with overlaid background photo -->
+    <div class="header container-fluid" style="padding-top: 0;" id="top">
+        <!-- <div class="overlay"></div> -->
+        <!-- Need features in order for the text to properly show as white -->
+        <div class="container-fluid features">
+            <div class="container-fluid" style="padding-bottom: 5vh; margin: 0px;">
+                <!-- darkbox to contain penfast tool -->
+
+                <div class="cleandarkBox" style="padding-bottom: 2vh; margin-bottom: 0px;margin-right: 0em;" id="toolBox">
+                    <!-- scrollbox height should be at least to the expand thing -->
+                    <div class="scrollbox" style="overflow:auto;margin-right: 0em;" id="toolscrollbox">
+                        <table class="questionTable" style="width:100%;">
+                            <tr>
+                                <td colspan="2">
+                                    <h3 class="feature-subtitle" style="text-align: center;padding-bottom: 1rem;">
+                                        This tool is ONLY valid for those with a suspected penicillin allergy <br>(ie.
+                                        to penicillin, amoxicillin, ampicillin)
+                                    </h3>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Has it been five years or less since your reaction?</td>
+                                <td style="width:120px;">
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q1">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>When you had the reaction, was there swelling or <b><u>a formal diagnosis</u></b> of
+                                    anaphylaxis?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q2">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>When you had the reaction, was there any rash that <a target="_blank"
+                                        href="https://jay-joshy.github.io/severeCutReaction.html">looked like this?</a>
+                                </td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q3">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>When you had the reaction, was any treatment given besides stopping the penicillin? If you are unsure, say "Yes".
+                                </td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q4">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="whitebox" style="padding-top: 1em;">
+                                        <h3 class="feature-subtitle" style="margin-top: 0;">CALCULATED RISK:</h3>
+                    <p id="scorereport"></p>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h3 class="feature-subtitle" style="text-align: center">
+                                        To more accurately determine if you are appropriate for a challenge, answer the following:
+                                    </h3>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Is there any chance you are pregnant?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q5">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Are you currently taking a beta-blocker (ie. bisoprolol)?</td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q6">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td>Have you been formally diagnosed with congestive heart failure, coronary plaque,
+                                    heart valve issues, or an uncontrolled arrhythmia?
+                                </td>
+                                <td>
+                                    <label class="qswitch">
+                                        <input type="checkbox" unchecked id="q7">
+                                        <span class="qslider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td style="padding-top: 1em;" colspan="2">Do you have any of these lung issues?</td>
+
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td colspan="2" style="text-align: left">
+                                    <label class="checkmarkcontainer"
+                                        style="display: inline-block; padding-right: 1em;"> Uncontrolled asthma
+                                        <input type="checkbox" name="unconasthma" value="uncontrolled asthma">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="checkmarkcontainer"
+                                        style="display: inline-block; padding-right: 1em;"> Severe COPD
+                                        <input type="checkbox" name="sevCOPD" value="severe COPD">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="checkmarkcontainer"
+                                        style="display: inline-block; padding-right: 1em;"> Interstitial lung disease
+                                        <input type="checkbox" name="ild">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+
+                            </tr>
+
+                            <tr class="questionTableRow" >
+                                <td style="padding-top: 1em;" colspan="2">Do you have any of the following?</td>
+
+
+                                </td>
+                            </tr>
+                            <tr class="questionTableRow">
+                                <td colspan="2">
+                                    <div style="text-align: left;">
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> Not well controlled
+                                            ezcema
+                                            <input type="checkbox" name="unconezcema">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> Not well controlled
+                                            allergic rhinitis (seasonal allergies)
+                                            <input type="checkbox" name="unconallrhin">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> Hives or skin rashes
+                                            normally
+                                            <input type="checkbox" name="chronurt">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;" id="jumpto"> Any "Mast cell"
+                                            disorders
+                                            <input type="checkbox" name="mastocyt">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkmarkcontainer"
+                                            style="display: inline-block; padding-right: 1em;"> A current infection
+                                            <input type="checkbox" name="acuteinfect">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                        
+                    </div>
+
+                </div>
+                <!-- decision box with buttons -->
+                <div class="whitebox footer " style="margin-top: 0px;padding-top: 0;" id="decisionBox">
+                    
+                    <h3 class="feature-subtitle" style="padding-top:0px;">Recommendations</h3>
+                    <p id="decision">
+                        You are likely safe for oral challenge without referral to allergist.
+                        If an oral challenge is considered, it must be done in a medically monitored setting with
+                        appropriate tools and standby medications. Please see your family doctor or allergist for more
+                        details.
+
+                    </p>
+
+                    </br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <!-- link for script for jfPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+    <script>
+        function listGrammar(str, and = true) {
+            var lastComIndex = str.lastIndexOf(",");
+            var grammerz = and ? str.substring(0, lastComIndex) + " and" + str.substring(lastComIndex + 1) : str.substring(0, lastComIndex) + " or" + str.substring(lastComIndex + 1)
+            if (lastComIndex > -1) {
+                return grammerz
+            }
+            else {
+                return str
+            }
+
+        }
+
+        function byID(id) {
+            return document.getElementById(id)
+        }
+        function byN(name) {
+            return document.getElementsByName(name)
+        }
+
+        //to get score use method below
+        function getInput() {
+            var q1 = byID('q1').checked
+            var q2 = byID('q2').checked
+            var q3 = byID('q3').checked
+            var q4 = byID('q4').checked
+            var score = 0
+            var penfast = [q1, q2, q3, q4]
+            
+            // need score
+            score = q1? score + 2 : score 
+            score = q2? score + 2 : score                    
+                if(!q2){
+                    score = q3? score + 2 : score 
+                }
+                score = q4? score + 1 : score
+
+
+
+            var pregnant = byID('q5').checked ? '+is pregnant' : "pregnancy"
+            var betaBlock = byID("q6").checked ? '+has current beta-blocker use' : "current beta-blocker use"
+            var heartDisease = byID("q7").checked ? '+has significant heart disease (CHF / CAD / arrhythmogenic / valvular)' : "significant cardiac disease (CHF / CAD / arrhythmogenic / valvular)"
+            var uncontrolAsthma = byN("unconasthma")[0].checked ? '+has uncontrolled asthma' : 'uncontrolled asthma'
+            var unconezcema = byN("unconezcema")[0].checked ? '+has uncontrolled ezcema' : 'uncontrolled ezcema'
+            var severCOPD = byN("sevCOPD")[0].checked ? '+has severe COPD' : 'severe COPD'
+            var ild = byN("ild")[0].checked ? '+has ILD' : 'ILD'
+            var mastocyt = byN("mastocyt")[0].checked ? '+has mastocytosis' : 'mastocytosis'
+            var unconAllrhin = byN("unconallrhin")[0].checked ? '+has uncontrolled allergic rhinitis' : 'uncontrolled allergic rhinitis'
+            var acuteInfect = byN("acuteinfect")[0].checked ? '+has current acute infection' : 'current acute infection'
+            var chronUrt = byN("chronurt")[0].checked ? '+has uncontrolled baseline urticaria' : 'uncontrolled baseline urticaria'
+
+            var badOutConPosit = []
+            var badOutConNeg = []
+            var badOutConL = [pregnant, betaBlock, heartDisease, uncontrolAsthma, severCOPD, ild]
+            for (x in badOutConL) {
+                if (badOutConL[x].charAt(0) == "+") {
+                    badOutConL[x] = badOutConL[x].replace('+', '')
+                    badOutConPosit.push(badOutConL[x])
+                }
+                else {
+                    badOutConNeg.push(badOutConL[x])
+                }
+            }
+            badOutConPosit = badOutConPosit.length > 0 ? "Patient " + listGrammar(badOutConPosit.join(", ")) + ". " : ""
+            badOutConNeg = badOutConNeg.length > 0 ? "No known history of " + listGrammar(badOutConNeg.join(", "), false) : ''
+            badOutConDesc = badOutConPosit + badOutConNeg
+
+
+            confoundPosit = []
+            confoundNeg = []
+            confoundL = [unconezcema, mastocyt, unconAllrhin, acuteInfect, chronUrt]
+            for (x in confoundL) {
+                if (confoundL[x].charAt(0) == "+") {
+                    confoundL[x] = confoundL[x].replace('+', '')
+                    confoundPosit.push(confoundL[x])
+                }
+                else {
+                    confoundNeg.push(confoundL[x])
+                }
+            }
+            confoundPosit = confoundPosit.length > 0 ? "Patient " + listGrammar(confoundPosit.join(", ")) + ". " : ""
+            confoundNeg = confoundNeg.length > 0 ? "No known history of " + listGrammar(confoundNeg.join(", "), false) : ''
+            confoundDesc = confoundPosit + confoundNeg
+
+            var data = [score, pregnant, badOutConDesc, confoundDesc, badOutConPosit, confoundPosit]
+            return data
+        }
+
+        // https://github.com/parallax/jsPDF
+        // https://parall.ax/products/jspdf
+        // input is array of outputs for thing
+        function createPDFSummary() {
+            userInput = getInput()
+            var pdfBut = byID("pdfBut")
+
+            // Default export is a4 paper, portrait, using millimeters for units
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.setFont('times')
+            doc.setFontSize(22)
+            doc.text("Penicillin Allergy Challenge Referral", 20, 20);
+            doc.setFontSize(12)
+            doc.line(20, 25, 190, 25) // horizontal line
+            doc.setFont(undefined, 'bold')
+            doc.text("Name: ", 20, 40)
+            doc.text("Age and sex: ", 20, 50)
+            doc.text("Reason for referral: " + userInput[5] + " allergy", 20, 60)
+            doc.setFont(undefined, 'normal')
+            var text = "Pertinent conditions/comorbidities:\n" +
+                userInput[2] + "\n\n" +
+                "Conditions that may confound oral challenge interpretion:\n" +
+                userInput[3] + "\n\n" +
+                "Other allergies:\n" +
+                userInput[12] + "\n\n" +
+                "Their last reaction to " + userInput[5] + " was " + userInput[9] + ", which was given for " + userInput[6] + ". " + userInput[8] + ", they experienced " + userInput[4] +
+                " Treatment was " + userInput[10] + ". They have " + userInput[7] + " before their reaction. They " + userInput[11] + " had penicillins since this reaction.\n\n" +
+                "PEN-FAST score: " + userInput[0] + " => " + boldScore(userInput[0]) + "\n\n" +
+                "Impression and Plan:\n" +
+                decisionText(userInput[0], userInput[1] == "+is pregnant" ? true : false).replace('(ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.)','(ie. SBP > 100, HR < 120, using < 4L O2, etc.)')
+            text = doc.splitTextToSize(text, 170)
+            doc.text(text, 20, 70)
+            doc.text("Comments below:", 20, 240)
+            //doc.output('dataurlnewwindow');
+
+            pdfBut.href = doc.output("bloburl")
+
+        }
+        window.oncontextmenu = function () {
+            if (byID("penicillin").value != '') {
+                createPDFSummary()
+            }
+            
+        }
+
+        function boldScore(score) {
+            var t = "of positive penicillin allergy test"
+            var none = byID("0p")
+            var low = byID("1-2p")
+            var med = byID("3p")
+            var high = byID("4p")
+            var description = "Very low risk (<1%) " + t
+            if (score == 0) {
+
+                description = "Very low risk (<1%) " + t
+            }
+            if (score == 1 || score == 2) {
+
+                description = "Low risk (5%) " + t
+            }
+            else if (score == 3) {
+
+                description = "Moderate risk (20%) " + t
+            }
+            else if (score == 4 || score ==5) {
+
+                description = "High risk (50%) " + t
+            }
+            return description;
+        }
+
+        //data = [score, pregnant, badOutConDesc, confoundDesc, badOutConPosit, confoundPosit]
+        function decisionText(score, preg = false, jargon = true) {
+            var userInput = getInput()
+            var badOutCon = true
+
+            // need to remove "has"
+            var badOutConPosit = userInput[4] != '' ? userInput[4].substring(8).replaceAll('has ', '').replaceAll('is pregnant, ', '').replaceAll('is pregnant and ', '').replaceAll('.', '').trim() : badOutCon = false
+            badOutCon = badOutConPosit == "is pregnant" ? false : badOutCon
+
+            var confound = true
+            var confoundPosit = userInput[5] != '' ? userInput[5].substring(8).replaceAll('has ', '').replaceAll('.', '').trim() : confound = false
+
+            //text if challenge can be done
+            var setting = "If an oral challenge is done, patient must be stable (ie. SBP&gt;100, HR&lt;120, using &lt;4L O2, etc.). Settings should be equipped with antihistamines to manage mild reactions and IM epinephrine to manage anaphylactic reactions, as well as standard resuscitation medications and equipment. Please see the 'How to perform a challenge' page."
+            //insert logic for score
+            var decisionBox = byID('decision');
+            var decisionText = ""
+
+            if (jargon) {
+                if (preg) {
+                    decisionText = "Overall recommend a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. Typically preceding challenge we would undertake skin testing and subsequently a 2 step oral challenge."
+                    if (score == 3 || score == 4 || score ==5) {
+                        decisionText = decisionText + " In addition, they are at moderate or high risk of having a true allergy."
+                    }
+                    if (badOutCon) {
+                        decisionText = decisionText + " Moreover, their history is significant for " + badOutConPosit + ", which creates higher risk with a challenge."
+                    }
+                    if (confound) {
+                        decisionText = decisionText + " The presence of " + confoundPosit + " also would make interpretation of results difficult."
+                    }
+                    return decisionText
+                }
+                else if (score == 0 || score == 1 || score == 2) {
+                    if (badOutCon || confound) {
+                        decisionText = "Challenge: YES\nReferral to allergist: YES\nWhile likely safe, the risks and benefits of a challenge must be carefully considered given the patient's history."
+
+                        if (badOutCon) {
+                            decisionText = decisionText + " Namely, their medical history of " + badOutConPosit + " creates higher risk with a challenge."
+                        }
+                        if (confound) {
+                            decisionText = decisionText + " Moreover, the presence of " + confoundPosit + " would also make interpretation of the results difficult."
+                        }
+                        decisionText = decisionText + "\n\n" + setting
+                        return decisionText
+                    } else {
+                        decisionText = "Recommend an oral challenge. Patient is safe for oral challenge without referral to allergist. \n\n" + setting
+                        return decisionText
+                    }
+                }
+                else {
+                    decisionBox.innerHTML = "Continue to avoid the penicillin for now given high risk of true allergy. Referral to allergy specialist may be able to better clarify their true risk with skin testing and additional measures"
+                    return decisionBox.innerHTML
+                }
+                //patient language
+            } else {
+                setting = "If an oral challenge is considered, it must be done in a medically monitored setting with appropriate tools and standby medications. Please see your family doctor or allergist for more details."
+
+                if (preg) {
+                    decisionBox.innerHTML = "<b>Challenge => NO, Referral to allergist => YES.</b><br>Overall recommend a seeing your Family Physician to obtain a referral to an Allergist. Penicillin allergy assessments in pregnancy are extremely important but undertaken with a different risk profile. An allergist would discuss a specialized testing protocol."
+                    if (score == 3 || score == 4 || score ==5) {
+                        decisionBox.innerHTML = decisionBox.innerHTML + " In addition, you are at moderate or high risk of having a true allergy."
+                    }
+                    if (badOutCon) {
+                        decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, your history is significant for " + badOutConPosit + ", which does create higher risk with a challenge."
+                    }
+                    if (confound) {
+                        decisionBox.innerHTML = decisionBox.innerHTML + " The presence of " + confoundPosit + " would also make interpretation of an oral challenge more difficult."
+                    }
+                    return decisionBox.innerHTML
+                }
+                else if (score == 0 || score == 1 || score == 2) {
+                    if (badOutCon || confound) {
+                        decisionBox.innerHTML = "<b>Challenge => YES, Referral to allergist => YES.</b><br>Overall we recommend an oral challenge after referral to an allergist. Given your medical/medication history there should be a discussion of risks/benefits with an allergist."
+
+                        if (badOutCon) {
+                            decisionBox.innerHTML = decisionBox.innerHTML + " Namely, your medical history of " + badOutConPosit + " does create higher risk with an oral challenge."
+                        }
+                        if (confound) {
+                            decisionBox.innerHTML = decisionBox.innerHTML + " Moreover, the presence of " + confoundPosit + " would also make interpretation of the results more difficult."
+                        }
+                        decisionBox.innerHTML = decisionBox.innerHTML + "<br><br>" + setting
+                        return decisionBox.innerHTML
+                    } else {
+                        decisionBox.innerHTML = "<b>Challenge => YES, Referral to allergist => NO.</b><br> We recommend an oral challenge. You are likely safe for an oral challenge without referral to allergist.<br><br>" + setting
+                        return decisionBox.innerHTML
+                    }
+                }
+                else {
+                    decisionBox.innerHTML = "<b>Challenge => NO, Referral to allergist => MAYBE.</b><br>Continue to avoid the penicillin for now given your high risk of true allergy. Referral to allergy specialist may be able to better clarify your true risk with skin testing and additional measures"
+                    return decisionBox.innerHTML
+                }
+            }
+        }
+        function scoreEdit(q, score) {
+            if (q.checked) { score = score + 1 } else { score = score - 1 }
+            return score;
+        }
+        function tallyScore() {
+            document.addEventListener('DOMContentLoaded', function () {
+                var q1 = byID("q1")
+                var q2 = byID("q2")
+                var q3 = byID("q3")
+                var q4 = byID("q4")
+                var q5 = byID("q5")
+                var q6 = byID("q6")
+                var q7 = byID("q7")
+                var uncontrolAsthma = byN("unconasthma")[0]
+                var severCOPD = byN("sevCOPD")[0]
+                var ild = byN("ild")[0]
+
+                var unconezcema = byN("unconezcema")[0]
+                var mastocyt = byN("mastocyt")[0]
+                var unconAllrhin = byN("unconallrhin")[0]
+                var unconUrtic = byN('chronurt')[0]
+                var acuteInfect = byN('acuteinfect')[0]
+
+                var scoredisplay = byID('scorereport');
+                var decisionBox = byID('decision');
+                var score = 0;
+                var preg = false;
+                scoredisplay.innerHTML = "Very low risk (<1%) of positive penicillin allergy test"
+
+                
+                // timing, 2 points
+                q1.addEventListener('change', function () {
+                        //edit score
+                        score = q1.checked? score + 2 : score - 2 
+                        decisionText(score, preg,false)
+                        scoredisplay.innerHTML = boldScore(score)
+                    });
+                
+                // ana/angio OR severe cut = 2 points
+                q2.addEventListener('change', function () {
+                    // if q3 already checked then don't add new score or subtract
+                    if(!q3.checked){
+                        score = q2.checked? score + 2 : score - 2 
+                    }
+                     
+                    decisionText(score, preg,false)
+                    scoredisplay.innerHTML = boldScore(score)
+                });
+                q3.addEventListener('change', function () {
+                    //edit score
+                    // if q3 already checked then don't add new score or subtract
+                    if(!q2.checked){
+                        score = q3.checked? score + 2 : score - 2 
+                    }
+                    decisionText(score, preg,false)
+                    scoredisplay.innerHTML = boldScore(score)
+                });            
+                
+                // treatment
+                q4.addEventListener('change', function () {
+                        //edit score
+                        score = q4.checked? score + 1 : score - 1 
+                        decisionText(score, preg,false)
+                        scoredisplay.innerHTML =  boldScore(score)
+                    });
+
+                // var qQuestions = [q1, q2, q3, q4]
+                // qQuestions.forEach(element => {
+                //     element.addEventListener('change', function () {
+                //         score = scoreEdit(element, score)
+                //         decisionText(score, preg, false)
+                //         scoredisplay.innerHTML = boldScore(score)
+                //     });
+                // });
+
+
+                q5.addEventListener('change', function () {
+                    preg = q5.checked ? true : false
+                    decisionText(score, preg, false)
+                });
+                var otherSwit = [q6, q7, uncontrolAsthma, unconezcema, severCOPD, mastocyt, ild, unconAllrhin, unconUrtic, acuteInfect]
+                otherSwit.forEach(element => {
+                    element.addEventListener('change', function () {
+                        decisionText(score, preg, false)
+                    });
+                });
+            });
+        }
+        tallyScore()
+        // SPECIFICALLY FOR THE HPI, NOT FOR OTHERS.
+
+
+        function getH() {
+            return window.innerHeight <= window.innerWidth ? document.getElementById('toolBox').getBoundingClientRect().height + 500 : document.getElementById('toolBox').getBoundingClientRect().height + 500
+        }
+
+        // //byID("top").setAttribute("style", "height:" + getH() + "px")
+        // byID('toolscrollbox').setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
+        
+        // //resize background colour dynamically
+        // window.addEventListener('resize', function (event) {
+        //     // do stuff here
+        //     //byID("top").setAttribute("style", "height:" + getH() + "px")
+        //    byID("toolscrollbox").setAttribute("style", "max-height:" + (window.innerHeight - 30- document.getElementById('decisionBox').getBoundingClientRect().height) + "px;overflow:auto;")
+        // });     
+
+
+        function showOtherOptions(id, name) {
+            var row = byID(id)
+            var checkbox = byN(name)[0]
+            if (checkbox.checked) {
+                row.style.display = 'table-row';
+            }
+            else {
+                row.setAttribute("style", "display:none;")
+            }
+        }
+    </script>
+</body>
+
+</html>
